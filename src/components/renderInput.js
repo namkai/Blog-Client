@@ -5,7 +5,7 @@ const renderInput = field =>
 		<input className="form-control" {...field.input} type={field.type}/>
 		{field.meta.touched &&
 		field.meta.error &&
-		<span className="error">{field.meta.error}</span>}
+		<span className="error" style={{ color: 'red' }}>{field.meta.error}</span>}
 	</div>;
 
 export default renderInput;
