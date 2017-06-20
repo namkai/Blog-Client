@@ -17,6 +17,14 @@ const Signup = ({ handleSubmit, signupUser, auth: { error } }) => {
 	return (
 		<form onSubmit={handleSubmit(user => signupUser(user))}>
 			<fieldset className="form-group">
+				<label>Full Name:</label>
+				<Field
+					name="name"
+					type="name"
+					component={renderInput}
+				/>
+			</fieldset>
+			<fieldset className="form-group">
 				<label>Email:</label>
 				<Field
 					name="email"
@@ -46,7 +54,7 @@ const Signup = ({ handleSubmit, signupUser, auth: { error } }) => {
 	);
 };
 
-const validate = values => {
+const validate = (values) => {
 	const errors = {};
 	if (values.passwordConfirm !== values.password) {
 		errors.passwordConfirm = 'Passwords must match';
@@ -56,6 +64,9 @@ const validate = values => {
 	}
 	if (!values.passwordConfirm) {
 		errors.passwordConfirm = 'Please enter a password confirmation';
+	}
+	if (!values.name) {
+		errors.name = 'Please enter your full name';
 	}
 	if (!values.email) {
 		errors.email = 'Please enter an email';

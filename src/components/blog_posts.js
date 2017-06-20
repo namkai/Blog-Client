@@ -1,12 +1,14 @@
 import React from 'react';
-import { connect } from 'react-redux';
+import managePosts from './hoc/manage_posts';
+import Post from './post';
 
-const BlogPosts = (props) => {
+export const BlogPosts = ({ posts }) => {
+	console.log(posts, `i'm the posts`);
+	const postList = posts.map(post => <Post {...post} />);
 	return (
-		<div>Blog Posts!</div>
+		<div>
+			{postList}
+		</div>
 	);
 };
-
-
-
-export default connect()(BlogPosts);
+export default managePosts(BlogPosts);

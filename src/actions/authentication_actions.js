@@ -1,7 +1,7 @@
 import axios from 'axios';
-import { history } from '../index';
 import * as type from '../constants/actionTypes';
 import * as api from '../constants/api';
+import { history } from '../index';
 
 // Submit email/password to the server
 // If request is good...
@@ -16,16 +16,16 @@ export const authError = error => ({ type: type.AUTH_ERROR, payload: error });
 export const signinUser = user => dispatch =>
 	axios
 		.post(`${api.ROOT}/signin`, user)
-		.then(response => {
+		.then((response) => {
 			dispatch({ type: type.AUTH_USER });
 			localStorage.setItem('token', response.data.token);
 			history.push('/posts');
 		})
 		.catch(error => dispatch(authError('Bad Login Info')));
 
-export const signupUser = ({ email, password }) => dispatch =>
+export const signupUser = ({ name, email, password }) => dispatch =>
 	axios
-		.post(`${api.ROOT}/signup`, { email, password })
+		.post(`${api.ROOT}/signup`, { name, email, password })
 		.then((response) => {
 			dispatch({ type: type.AUTH_USER });
 			localStorage.setItem('token', response.data.token);
@@ -36,4 +36,8 @@ export const signupUser = ({ email, password }) => dispatch =>
 export const signoutUser = () => {
 	localStorage.removeItem('token');
 	return { type: type.UNAUTH_USER };
+};
+
+export const getUserData = () => {
+
 };
