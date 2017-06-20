@@ -1,12 +1,23 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { reduxForm, Field } from 'redux-form';
+import { Field, reduxForm } from 'redux-form';
 import * as actions from '../actions/post_actions';
+import manageUser from './hoc/manage_user';
 import renderInput from './renderInput';
 
-const CreatePost = ({ handleSubmit, createPost }) => {
+const CreatePost = ({ handleSubmit, createPost, user: { _id, name } }) => {
+	const createNewPost = (post) => {
+		const newPost = {
+			...post,
+			author: {
+				name,
+				id: _id,
+			},
+		};
+		createPost(newPost);
+	};
 	return (
-		<form onSubmit={handleSubmit(user => createPost(user))}>
+		<form onSubmit={handleSubmit(user => createNewPost(user))}>
 			<fieldset className="form-group">
 				<label>Title:</label>
 				<Field
@@ -44,4 +55,4 @@ const CreatePost = ({ handleSubmit, createPost }) => {
 	);
 };
 
-export default connect(null, actions)(reduxForm({ form: 'newpost' })(CreatePost));
+export default connect(null, actions)(reduxForm({ form: 'newpost' })(manageUser(CreatePost)));

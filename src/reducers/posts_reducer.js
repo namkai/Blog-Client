@@ -4,6 +4,8 @@ export default function (state = [], action) {
 	switch (action.type) {
 	case type.FETCH_POSTS:
 		return action.payload;
+	case type.FETCH_POST:
+		return action.payload;
 	default:
 		return state;
 	}

@@ -3,7 +3,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { Route, Router } from 'react-router-dom';
-import * as type from './constants/actionTypes';
 import App from './components/app';
 import Signin from './components/auth/signin';
 import Signout from './components/auth/signout';
@@ -12,6 +11,8 @@ import BlogPosts from './components/blog_posts';
 import CreatePost from './components/create_post';
 import requireAuth from './components/hoc/require_authentication';
 import Profile from './components/profile';
+import PostsShow from './components/show_post';
+import * as type from './constants/actionTypes';
 import configureStore from './store';
 import './style/index.css';
 
@@ -36,6 +37,7 @@ ReactDOM.render(
 				<Route path="/signup" component={Signup}/>
 				<Route path="/profile" component={requireAuth(Profile)}/>
 				<Route path="/createpost" component={requireAuth(CreatePost)}/>
+				<Route path="/posts/:id" component={PostsShow} />
 			</div>
 		</Router>
 	</Provider>

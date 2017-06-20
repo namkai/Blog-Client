@@ -1,11 +1,10 @@
 import React from 'react';
-import { connect } from 'react-redux';
+import manageUser from './hoc/manage_user';
 
-const Profile = (props) => {
-	console.log(props)
+const Profile = ({ user }) => {
 	return (
 		<div>Profile</div>
 	);
 };
 
-export default connect()(Profile);
+export default manageUser(Profile);

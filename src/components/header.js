@@ -6,11 +6,14 @@ import { NavLink } from 'react-router-dom';
 const Header = ({ authenticated }) => {
 	const renderLinks = () => {
 		if (authenticated) {
-			return (
-				<li className="nav-item">
+			return [
+				<li className="nav-item" key={1}>
 					<NavLink className="nav-link" to="/signout">Sign Out</NavLink>
-				</li>
-			);
+				</li>,
+				<li className="nav-item" key={2}>
+					<NavLink className="nav-link" to="/createpost">New Post</NavLink>
+				</li>,
+			];
 		}
 		return [
 			<li className="nav-item" key={1}>

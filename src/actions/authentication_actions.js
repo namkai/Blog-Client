@@ -19,7 +19,7 @@ export const signinUser = user => dispatch =>
 		.then((response) => {
 			dispatch({ type: type.AUTH_USER });
 			localStorage.setItem('token', response.data.token);
-			history.push('/posts');
+			history.push('/');
 		})
 		.catch(error => dispatch(authError('Bad Login Info')));
 
@@ -29,7 +29,7 @@ export const signupUser = ({ name, email, password }) => dispatch =>
 		.then((response) => {
 			dispatch({ type: type.AUTH_USER });
 			localStorage.setItem('token', response.data.token);
-			history.push('/posts');
+			history.push('/');
 		})
 		.catch(response => dispatch(authError('Email already in use')));
 
@@ -38,6 +38,7 @@ export const signoutUser = () => {
 	return { type: type.UNAUTH_USER };
 };
 
-export const getUserData = () => {
-
-};
+export const getUserData = token => dispatch =>
+	axios
+		.get(`${api.ROOT}`, { headers: { Authorization: token } })
+		.then(({ data: { user } }) => dispatch({ type: type.GET_USER, payload: user }));
