@@ -2,7 +2,9 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Field, reduxForm } from 'redux-form';
 import * as actions from '../actions/post_actions';
+import { history } from '../index';
 import manageUser from './hoc/manage_user';
+import requireAuth from './hoc/require_authentication';
 import renderInput from './renderInput';
 
 const CreatePost = ({ handleSubmit, createPost, user: { _id, name } }) => {
@@ -15,6 +17,7 @@ const CreatePost = ({ handleSubmit, createPost, user: { _id, name } }) => {
 			},
 		};
 		createPost(newPost);
+		history.push('/');
 	};
 	return (
 		<form onSubmit={handleSubmit(user => createNewPost(user))}>
@@ -55,4 +58,4 @@ const CreatePost = ({ handleSubmit, createPost, user: { _id, name } }) => {
 	);
 };
 
-export default connect(null, actions)(reduxForm({ form: 'newpost' })(manageUser(CreatePost)));
+export default connect(null, actions)(reduxForm({ form: 'newpost' })(requireAuth(manageUser(CreatePost))));

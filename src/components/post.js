@@ -1,12 +1,21 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
-const Post = ({ _id, title, image, body, description, author }) => (
-	<li className="list-group-item" key={_id}>
-		<Link to={'posts/' + _id}>
-			<span className="pull-right">{body}</span>
-			<strong>{title}</strong>
-		</Link>
+const Post = ({ _id, title, image, body, description, author, selectPost }) => (
+	<li className="media list-group-item p-4" onClick={() => selectPost(_id)}>
+		<img
+			className="media-object d-flex align-self-start mr-3"
+			src={image} />
+		<div className="media-body">
+			<div className="media-body-text">
+				<div className="media-heading">
+					<small className="float-right text-muted">{ author.name }</small>
+					<h6>{title}</h6>
+				</div>
+				<p>
+					{description}
+				</p>
+			</div>
+		</div>
 	</li>
 );
 

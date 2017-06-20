@@ -3,9 +3,8 @@ import Header from './header';
 import manageUser from './hoc/manage_user';
 
 const App = ({user}) => (
-	<div>
+	<div className="with-top-navbar">
 		<Header />
-		{user.name}
 	</div>
 );
 

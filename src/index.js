@@ -3,6 +3,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { Route, Router } from 'react-router-dom';
+import './style/v4/dist/toolkit.css';
+import './style/v4/docs/assets/css/application.css';
 import App from './components/app';
 import Signin from './components/auth/signin';
 import Signout from './components/auth/signout';
@@ -37,7 +39,7 @@ ReactDOM.render(
 				<Route path="/signup" component={Signup}/>
 				<Route path="/profile" component={requireAuth(Profile)}/>
 				<Route path="/createpost" component={requireAuth(CreatePost)}/>
-				<Route path="/posts/:id" component={PostsShow} />
+				<Route path="/posts/:id" component={PostsShow}/>
 			</div>
 		</Router>
 	</Provider>

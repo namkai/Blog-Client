@@ -1,11 +1,16 @@
 import * as type from '../constants/actionTypes';
 
-export default function (state = [], action) {
+const intialState = {
+	posts: [],
+	selectedPostId: '',
+};
+
+export default function (state = intialState, action) {
 	switch (action.type) {
 	case type.FETCH_POSTS:
-		return action.payload;
-	case type.FETCH_POST:
-		return action.payload;
+		return { posts: action.payload.posts, selectedPostId: '' };
+	case type.SELECT_POST:
+		return { ...state, selectedPostId: action.payload };
 	default:
 		return state;
 	}
