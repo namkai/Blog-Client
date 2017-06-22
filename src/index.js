@@ -11,9 +11,9 @@ import Signout from './components/auth/signout';
 import Signup from './components/auth/signup';
 import BlogPosts from './components/blog_posts';
 import CreatePost from './components/create_post';
+import EditPost from './components/edit_post';
 import requireAuth from './components/hoc/require_authentication';
 import Profile from './components/profile';
-import PostsShow from './components/show_post';
 import * as type from './constants/actionTypes';
 import configureStore from './store';
 import './style/index.css';
@@ -31,7 +31,7 @@ if (token) {
 ReactDOM.render(
 	<Provider store={store}>
 		<Router history={history}>
-			<div>
+			<switch>
 				<Route path="/" component={App}/>
 				<Route exact path="/" component={BlogPosts}/>
 				<Route path="/signin" component={Signin}/>
@@ -39,8 +39,8 @@ ReactDOM.render(
 				<Route path="/signup" component={Signup}/>
 				<Route path="/profile" component={requireAuth(Profile)}/>
 				<Route path="/createpost" component={requireAuth(CreatePost)}/>
-				<Route path="/posts/:id" component={PostsShow}/>
-			</div>
+				<Route path="/edit" component={requireAuth(EditPost)}/>
+			</switch>
 		</Router>
 	</Provider>
 	, document.getElementById('root'));

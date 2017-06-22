@@ -23,9 +23,9 @@ export const signinUser = user => dispatch =>
 		})
 		.catch(error => dispatch(authError('Bad Login Info')));
 
-export const signupUser = ({ name, email, password }) => dispatch =>
+export const signupUser = ({ name, email, password, profilePhoto, backgroundPhoto }) => dispatch =>
 	axios
-		.post(`${api.ROOT}/signup`, { name, email, password })
+		.post(`${api.ROOT}/signup`, { name, email, password, profilePhoto, backgroundPhoto })
 		.then((response) => {
 			dispatch({ type: type.AUTH_USER });
 			localStorage.setItem('token', response.data.token);

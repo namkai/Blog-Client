@@ -48,6 +48,22 @@ const Signup = ({ handleSubmit, signupUser, auth: { error } }) => {
 					component={renderInput}
 				/>
 			</fieldset>
+			<fieldset className="form-group">
+				<label>Profile Picture:</label>
+				<Field
+					name="profilePhoto"
+					type="link"
+					component={renderInput}
+				/>
+			</fieldset>
+			<fieldset className="form-group">
+				<label>Background Photo:</label>
+				<Field
+					name="backgroundPhoto"
+					type="link"
+					component={renderInput}
+				/>
+			</fieldset>
 			{renderAlert()}
 			<button action="submit" className="btn btn-primary">Sign up!</button>
 		</form>

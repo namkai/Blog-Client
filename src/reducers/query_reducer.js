@@ -5,6 +5,8 @@ export default function (query = '', action) {
 	switch (action.type) {
 	case type.UPDATE_QUERY:
 		return action.payload;
+	case type.SELECT_POST:
+		return '';
 	default:
 		return query;
 	}

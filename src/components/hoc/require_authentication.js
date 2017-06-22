@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
 export default function (ComposedComponent) {
-	class Authentication extends Component {
+	class Authentication extends PureComponent {
 		static contextTypes = {
 			router: PropTypes.object
 		};

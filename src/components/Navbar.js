@@ -1,10 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom';
+
 import logo from '../style/v4/docs/assets/img/brand-white.png';
 
 
-const Header = ({ authenticated }) => {
+const Navbar = ({ authenticated }) => {
 	const renderLinks = () => {
 		if (authenticated) {
 			return [
@@ -48,29 +49,12 @@ const Header = ({ authenticated }) => {
 					<li className="nav-item">
 						<NavLink className="nav-link" to="/profile/projects">Profile</NavLink>
 					</li>
-
-					<li className="nav-item hidden-md-up">
-						<a className="nav-link" href="notifications/index.html">Notifications</a>
-					</li>
-					<li className="nav-item hidden-md-up">
-						<a className="nav-link" data-action="growl">Growl</a>
-					</li>
 					<li className="nav-item hidden-md-up">
 						<a className="nav-link" href="login/index.html">Logout</a>
 					</li>
-
 				</ul>
 
-				<form className="form-inline float-right hidden-sm-down">
-					<input className="form-control" type="text" data-action="grow" placeholder="Search"/>
-				</form>
-
 				<ul id="#js-popoverContent" className="nav navbar-nav float-right mr-0 hidden-sm-down">
-					<li className="nav-item">
-						<a className="app-notifications nav-link" href="notifications/index.html">
-							<span className="icon icon-bell"/>
-						</a>
-					</li>
 					<li className="nav-item ml-2">
 						{renderLinks()}
 					</li>
@@ -85,4 +69,4 @@ const Header = ({ authenticated }) => {
 	);
 };
 
-export default connect(({ auth: { authenticated } }) => ({ authenticated }))(Header);
+export default connect(({ auth: { authenticated } }) => ({ authenticated }))(Navbar);

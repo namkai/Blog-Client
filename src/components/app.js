@@ -1,5 +1,5 @@
 import React from 'react';
-import Header from './header';
+import Header from './Navbar';
 import manageUser from './hoc/manage_user';
 
 const App = ({user}) => (

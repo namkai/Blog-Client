@@ -5,10 +5,6 @@ import postsSelector from '../../selectors/selected_post';
 
 export default function (ComposedComponent) {
 	class PostsManager extends PureComponent {
-		componentWillMount() {
-			this.props.fetchPosts();
-		}
-
 		render() {
 			return (
 				<ComposedComponent {...this.props} />
