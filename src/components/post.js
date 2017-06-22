@@ -2,7 +2,7 @@ import React from 'react';
 import '../style/post.css';
 
 const Post = ({ _id, title, image, body, description, author, selectPost }) => (
-	<li className="media list-group-item p-4" onClick={() => selectPost(_id)}>
+	<li className="media list-group-item p-4 post" onClick={() => selectPost(_id)}>
 		<img
 			className="media-object d-flex align-self-start mr-3"
 			src={image}/>

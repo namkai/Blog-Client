@@ -32,3 +32,7 @@ export const deletePost = postId => dispatch =>
 
 export const editPost = post => dispatch => axios.put(`${api.ROOT}/posts/${post._id}`, post)
 	.then(response => dispatch({ type: type.FETCH_POSTS, payload: response.data }));
+
+export const addComment = comment => dispatch => axios.post(`${api.ROOT}/posts/${comment.postId}/comments`, comment)
+	.then(res => dispatch({ type: type.FETCH_POSTS, payload: res.data.post }))
+	.catch(error => console.log(error))

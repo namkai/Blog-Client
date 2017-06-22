@@ -8,7 +8,7 @@ const Profile = ({ user }) => {
 			<div className="container-fluid">
 				<div className="container-inner">
 					<img className="rounded-circle media-object" src={user.profilePhoto}/>
-					<h3 className="profile-header-user">Namkai Fairfield</h3>
+					<h3 className="profile-header-user">{user.name}</h3>
 					<p className="profile-header-bio">Check out my blog posts</p>
 				</div>
 			</div>

@@ -11,7 +11,8 @@ class BlogPosts extends PureComponent {
 		this.props.fetchPosts();
 	}
 	render() {
-		const { posts, selectPost, deletePost  } = this.props;
+		const { posts, selectPost, deletePost, addComment  } = this.props;
+		console.log(posts)
 		let list = null;
 		let header = null;
 		if (list === null) {
@@ -19,7 +20,7 @@ class BlogPosts extends PureComponent {
 		}
 		if (posts.length === 1) {
 			header = <PostHeader {...posts[0]} selectPost={selectPost} deletePost={deletePost}/>
-			list = <PostShow {...posts[0]} selectPost={selectPost}/>;
+			list = <PostShow {...posts[0]} selectPost={selectPost} addComment={addComment} />;
 		} else {
 			header = <Searchbar />
 			list = posts.map(post => <Post {...post} selectPost={selectPost}/>);

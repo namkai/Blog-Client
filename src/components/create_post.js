@@ -7,13 +7,14 @@ import manageUser from './hoc/manage_user';
 import requireAuth from './hoc/require_authentication';
 import renderInput from './renderInput';
 
-const CreatePost = ({ handleSubmit, createPost, user: { _id, name } }) => {
+const CreatePost = ({ handleSubmit, createPost, user: { _id, name, profilePhoto } }) => {
 	const createNewPost = (post) => {
 		const newPost = {
 			...post,
 			author: {
 				name,
 				id: _id,
+				profilePhoto,
 			},
 		};
 		createPost(newPost);
