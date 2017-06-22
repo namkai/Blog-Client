@@ -1,0 +1,12 @@
+
+.edit {
+	display: -ms-flexbox;
+	display: flex;
+	justify-content: space-around;
+	width: 100px;
+}
+.media, .media-body {
+	display: flex;
+	overflow: visible;
+	justify-content: space-between;
+}

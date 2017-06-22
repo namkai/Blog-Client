@@ -1,11 +1,16 @@
 import React, { PureComponent } from 'react';
+import { Link } from 'react-router-dom';
 import { Field, reduxForm } from 'redux-form';
 import { history } from '../index';
 import managePost from './hoc/manage_posts';
+import manageUser from './hoc/manage_user';
 import renderInput from './renderInput';
 
 class EditPost extends PureComponent {
 	componentWillMount() {
+		if (this.props.posts.length === 0) {
+			history.push('/');
+		}
 		this.props.initialize({ ...this.props.posts[0] });
 	}
 
@@ -58,6 +63,8 @@ class EditPost extends PureComponent {
 							component={renderInput}
 						/>
 					</fieldset>
+					<button className="btn btn-secondary"><Link to="/">Go Back</Link></button>
+					<span>   </span>
 					<button action="submit" className="btn btn-primary">Submit Post!</button>
 				</form>
 			</div>
@@ -73,4 +80,4 @@ const style = {
 	},
 };
 
-export default reduxForm({ form: 'newpost' })(managePost(EditPost));
+export default reduxForm({ form: 'newpost' })(manageUser(managePost(EditPost)));
