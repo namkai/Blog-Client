@@ -5,7 +5,7 @@ import renderInput from './renderInput';
 
 const CommentInput = ({ handleSubmit, author, addComment, postId }) => {
 	const onSubmit = (comment) => {
-		console.log(comment)
+		console.log(`I"M THE AUTHOR`, author)
 		const newComment = {
 			postId,
 			author: {
@@ -22,7 +22,7 @@ const CommentInput = ({ handleSubmit, author, addComment, postId }) => {
 	return (
 		<form onSubmit={handleSubmit(comment => onSubmit(comment))}>
 			<fieldset className="form-group">
-				<label htmlFor="">Add a comment:</label>
+				{/*<label htmlFor="">Add a comment:</label>*/}
 				<Field
 					name="comment"
 					type="text"
@@ -31,6 +31,7 @@ const CommentInput = ({ handleSubmit, author, addComment, postId }) => {
 			</fieldset>
 			<button>Add Comment</button>
 		</form>
+
 	);
 };
 

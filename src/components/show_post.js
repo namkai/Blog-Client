@@ -20,8 +20,8 @@ const PostsShow = ({ title, body, image, author, comments, _id, addComment }) =>
 						{body}
 					</p>
 					<ul className="media-list">
-						<CommentInput author={author} postId={_id} addComment={addComment} />
 						{commentList}
+						<CommentInput author={author} postId={_id} addComment={addComment} />
 					</ul>
 				</div>
 			</div>
