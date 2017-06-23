@@ -1,12 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import manageUser from './hoc/manage_user';
+import manageUser from '../redux/hoc/manage_user';
 
 export const ProfileCard = ({ user }) => (
 	<div className="card card-profile mb-4">
 		<div className="card-header" style={ { backgroundImage: `url(${ user.backgroundPhoto })` } }/>
 		<div className="card-block text-center">
-			<Link to="/profile">
+			<Link to="/profile/posts">
 				<img
 					className="card-profile-img"
 					src={ user.profilePhoto }

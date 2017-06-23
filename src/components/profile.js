@@ -1,8 +1,10 @@
 import React from 'react';
-import manageUser from './hoc/manage_user';
+import manageUser from '../redux/hoc/manage_user';
 import '../style/profile.css';
+import { Link } from 'react-router-dom';
 
 const Profile = ({ user }) => {
+	console.log(user);
 	return (
 		<div className="profile-header text-center" style={{ backgroundImage: `url(${ user.backgroundPhoto })` }}>
 			<div className="container-fluid">
@@ -15,7 +17,7 @@ const Profile = ({ user }) => {
 			<nav className="profile-header-nav">
 				<ul className="nav nav-tabs justify-content-center">
 					<li className="nav-item active">
-						<a className="nav-link" href="#">Blog Posts</a>
+						<Link className="nav-link"to="/profile/posts">Blog Posts</Link>
 					</li>
 				</ul>
 			</nav>

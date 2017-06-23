@@ -1,6 +1,6 @@
 import axios from 'axios';
-import * as type from '../constants/actionTypes';
-import * as api from '../constants/api';
+import * as type from '../../constants/actionTypes';
+import * as api from '../../constants/api';
 
 export const fetchMessage = () => dispatch =>
 	axios

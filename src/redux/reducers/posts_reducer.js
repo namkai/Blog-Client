@@ -1,4 +1,4 @@
-import * as type from '../constants/actionTypes';
+import * as type from '../../constants/actionTypes';
 
 const intialState = {
 	posts: [],
@@ -6,7 +6,6 @@ const intialState = {
 };
 
 export default function (state = intialState, action) {
-	console.log(action)
 	switch (action.type) {
 	case type.FETCH_POSTS:
 		return { posts: action.payload.posts, selectedPostId: '' };

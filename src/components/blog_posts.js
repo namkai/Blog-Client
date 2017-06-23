@@ -1,5 +1,4 @@
 import React, { PureComponent } from 'react';
-import managePosts from './hoc/manage_posts';
 import Post from './post';
 import PostHeader from './post_header';
 import Searchbar from './search_bar';
@@ -8,24 +7,19 @@ import Loading from './loading';
 import ProfileCard from './profile_card';
 
 class BlogPosts extends PureComponent {
-	componentWillMount() {
-		this.props.fetchPosts();
-	}
-
 	render() {
 		const { posts, selectPost, deletePost, addComment } = this.props;
-		console.log(posts);
 		let list = null;
 		let header = null;
 		if (list === null) {
-			list = <Loading />;
+			list = <Loading />
 		}
 		if (posts.length === 1) {
-			header = <PostHeader {...posts[0]} selectPost={selectPost} deletePost={deletePost}/>;
-			list = <PostShow {...posts[0]} selectPost={selectPost} addComment={addComment}/>;
-		} else {
+			header = <PostHeader {...posts[0]} selectPost={selectPost} deletePost={deletePost} />;
+			list = <PostShow {...posts[0]} selectPost={selectPost} addComment={addComment} />;
+		} else if (posts.length > 1) {
 			header = <Searchbar />;
-			list = posts.map(post => <Post {...post} selectPost={selectPost}/>);
+			list = posts.map(post => <Post {...post} selectPost={selectPost} />);
 		}
 		return (
 			<div className="container pt-4">
@@ -45,4 +39,4 @@ class BlogPosts extends PureComponent {
 	};
 }
 
-export default managePosts(BlogPosts);
+export default BlogPosts;

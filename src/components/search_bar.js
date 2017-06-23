@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { updateQuery } from '../actions/query_actions';
+import { updateQuery } from '../redux/actions/query_actions';
 
 export const Searchbar = ({ query, updateQuery }) =>
 	<li className="media list-group-item p-4">

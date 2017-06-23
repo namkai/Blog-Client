@@ -2,8 +2,8 @@ import React, { PureComponent } from 'react';
 import { Link } from 'react-router-dom';
 import { Field, reduxForm } from 'redux-form';
 import { history } from '../index';
-import managePost from './hoc/manage_posts';
-import manageUser from './hoc/manage_user';
+import managePost from '../redux/hoc/manage_posts';
+import manageUser from '../redux/hoc/manage_user';
 import renderInput from './renderInput';
 
 class EditPost extends PureComponent {

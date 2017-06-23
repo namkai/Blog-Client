@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Field, reduxForm } from 'redux-form';
-import * as actions from '../../actions/authentication_actions';
+import * as actions from '../../redux/actions/authentication_actions';
 import renderInput from '../renderInput';
 import logo from '../../style/v4/docs/assets/img/brand.png';
 

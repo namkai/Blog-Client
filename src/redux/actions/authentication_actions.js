@@ -1,7 +1,7 @@
 import axios from 'axios';
-import * as type from '../constants/actionTypes';
-import * as api from '../constants/api';
-import { history } from '../index';
+import * as type from '../../constants/actionTypes';
+import * as api from '../../constants/api';
+import { history } from '../../index';
 
 // Submit email/password to the server
 // If request is good...

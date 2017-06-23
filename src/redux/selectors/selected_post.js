@@ -1,4 +1,5 @@
 import { createSelector } from 'reselect';
+
 import queriedPosts from './selected_query_posts';
 
 const idSelector = state => state.posts.selectedPostId;
