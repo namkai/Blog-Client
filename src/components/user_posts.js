@@ -3,7 +3,6 @@ import Loading from './loading';
 import PostCard from './PostCard';
 
 const UserPosts = ({ posts }) => {
-	console.log(posts)
 	let postList = null;
 	if (postList === null) {
 		postList = <Loading />;

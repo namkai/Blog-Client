@@ -5,7 +5,6 @@ import renderInput from './renderInput';
 
 const CommentInput = ({ handleSubmit, author, addComment, postId }) => {
 	const onSubmit = (comment) => {
-		console.log(`I"M THE AUTHOR`, author)
 		const newComment = {
 			postId,
 			author: {
