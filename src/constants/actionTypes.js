@@ -1,6 +1,6 @@
 const constants = [
-	'AUTH_USER',
-	'AUTH_USER',
+	'UNAUTH_USER',
+	'AUTH_ERROR',
 	'AUTH_USER',
 	'FETCH_POSTS_',
 	'SELECT_POST',

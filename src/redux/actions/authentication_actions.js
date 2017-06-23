@@ -27,7 +27,7 @@ export const signupUser = ({ name, email, password, profilePhoto, backgroundPhot
 	axios
 		.post(`${api.ROOT}/signup`, { name, email, password, profilePhoto, backgroundPhoto })
 		.then((response) => {
-			dispatch({ type: type.AUTH_USER });
+			dispatch({ type: type.AUTH_USER_COMPLETED });
 			localStorage.setItem('token', response.data.token);
 			history.push('/');
 		})
@@ -35,7 +35,7 @@ export const signupUser = ({ name, email, password, profilePhoto, backgroundPhot
 
 export const signoutUser = () => {
 	localStorage.removeItem('token');
-	return { type: type.UNAUTH_USER };
+	return { type: type.UNAUTH_USER_COMPLETED };
 };
 
 export const getUserData = token => dispatch =>
