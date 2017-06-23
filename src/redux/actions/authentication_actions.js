@@ -17,7 +17,7 @@ export const signinUser = user => dispatch =>
 	axios
 		.post(`${api.ROOT}/signin`, user)
 		.then((response) => {
-			dispatch({ type: type.AUTH_USER });
+			dispatch({ type: type.AUTH_USER_COMPLETED });
 			localStorage.setItem('token', response.data.token);
 			history.push('/');
 		})
@@ -41,4 +41,4 @@ export const signoutUser = () => {
 export const getUserData = token => dispatch =>
 	axios
 		.get(`${api.ROOT}`, { headers: { Authorization: token } })
-		.then(({ data: { user } }) => dispatch({ type: type.GET_USER, payload: user }));
+		.then(({ data: { user } }) => dispatch({ type: type.GET_USER_COMPLETED, payload: user }));
