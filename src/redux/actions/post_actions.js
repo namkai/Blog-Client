@@ -16,10 +16,11 @@ export const fetchPosts = () => dispatch =>
 
 export const createPost = payload => dispatch =>
 	axios
-		.post(`${api.ROOT}/posts`, payload).then(response => dispatch({ type: type.ADD_POST_COMPLETED, payload: response }))
+		.post(`${api.ROOT}/posts`, payload)
+		.then(response => dispatch({ type: type.ADD_POST_COMPLETED, payload: response }))
 		.catch(err => console.log(err));
 
-export const selectPost = postId => ({ type: type.SELECT_POST, payload: postId });
+export const selectPost = postId => ({ type: type.SELECT_POST_COMPLETED, payload: postId });
 
 export const deletePost = postId => dispatch =>
 	axios

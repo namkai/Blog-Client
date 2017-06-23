@@ -3,7 +3,7 @@ const constants = [
 	'AUTH_ERROR',
 	'AUTH_USER',
 	'FETCH_POSTS_',
-	'SELECT_POST',
+	'SELECT_POST_',
 	'ADD_POST_',
 	'GET_USER_',
 	'UPDATE_QUERY',

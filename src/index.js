@@ -15,6 +15,7 @@ import requireAuth from './redux/hoc/require_authentication';
 import BlogPostsContainer from './redux/containers/BlogPostsContainer';
 import ProfileContainer from './redux/containers/ProfileContainer';
 import UserPostsContainer from './redux/containers/UserPostsContainer';
+import EditPostContainer from './redux/containers/EditPostContainer';
 import * as type from './constants/actionTypes';
 import configureStore from './redux/store';
 import './style/index.css';
@@ -41,7 +42,7 @@ ReactDOM.render(
 				<Route path="/profile" component={requireAuth(ProfileContainer)}/>
 				<Route path="/profile/posts" component={requireAuth(UserPostsContainer)}/>
 				<Route path="/createpost" component={requireAuth(CreatePost)}/>
-				<Route path="/edit" component={requireAuth(EditPost)}/>
+				<Route path="/edit" component={requireAuth(EditPostContainer)}/>
 			</switch>
 		</Router>
 	</Provider>

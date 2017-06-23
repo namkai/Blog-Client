@@ -1,5 +1,5 @@
 import React from 'react';
-import Navbar from './Navbar';
+import Navbar from './navbar';
 import manageUser from '../redux/hoc/manage_user';
 
 const App = ({user}) => (

@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import manageUser from '../redux/hoc/manage_user';
 import '../style/profile.css';
 
 const Profile = ({ user }) => (
@@ -22,4 +21,4 @@ const Profile = ({ user }) => (
 	</div>
 );
 
-export default manageUser(Profile);
+export default Profile;

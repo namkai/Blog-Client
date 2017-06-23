@@ -1,6 +1,6 @@
 import React from 'react';
 import Loading from './loading';
-import PostCard from './PostCard';
+import PostCard from './post_card';
 
 const UserPosts = ({ posts }) => {
 	let postList = null;
