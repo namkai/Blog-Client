@@ -1,5 +1,6 @@
 import * as type from '../constants/actionTypes';
 
+
 const intialState = {
 	posts: [],
 	selectedPostId: '',

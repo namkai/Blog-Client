@@ -4,7 +4,7 @@ import auth from './authentication_reducer';
 import posts from './posts_reducer';
 import user from './user_reducer';
 import query from './query_reducer';
-import entity from './entity_reducer';
+import entities from './entity_reducer';
 
 const rootReducer = combineReducers({
 	form,
@@ -12,7 +12,7 @@ const rootReducer = combineReducers({
 	posts,
 	user,
 	query,
-	entity,
+	entities,
 });
 
 export default rootReducer;
