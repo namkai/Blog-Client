@@ -1,5 +1,5 @@
 import React from 'react';
-import BlogPostView from './layout/BlogPostView';
+import BlogPostLayout from './layout/BlogPostLayout';
 import Loading from './loading';
 import Post from './post';
 import PostHeader from './post_header';
@@ -21,11 +21,11 @@ const BlogPosts = ({ posts, selectPost, deletePost, addComment, user, query, upd
 		list = posts.map(post => <Post {...post} selectPost={selectPost}/>);
 	}
 	return (
-		<BlogPostView card={ <ProfileCard {...user} />}>
-			<SearchBar query={query} updateQuery={updateQuery}/>
+		<BlogPostLayout card={<ProfileCard {...user} />}>
+			<SearchBar query={query} updateQuery={updateQuery} />
 			{ header }
 			{ list }
-		</BlogPostView>
+		</BlogPostLayout>
 	);
 };
 

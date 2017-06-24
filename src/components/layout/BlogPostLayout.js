@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 
-class BlogPostView extends PureComponent {
+class BlogPostLayout extends PureComponent {
 	render() {
 		return (
 			<div className="container pt-4">
@@ -19,4 +19,4 @@ class BlogPostView extends PureComponent {
 	}
 }
 
-export default BlogPostView;
+export default BlogPostLayout;

@@ -47,7 +47,7 @@ const Navbar = ({ authenticated }) => {
 						<NavLink className="nav-link" to="/createpost">New Post</NavLink>
 					</li>
 					<li className="nav-item">
-						<NavLink className="nav-link" to="/profile/projects">Profile</NavLink>
+						<NavLink className="nav-link" to="/profile/posts">Profile</NavLink>
 					</li>
 					<li className="nav-item hidden-md-up">
 						<a className="nav-link" href="login/index.html">Logout</a>
