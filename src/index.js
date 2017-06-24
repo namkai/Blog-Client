@@ -17,7 +17,7 @@ import ProfileContainer from './redux/containers/ProfileContainer';
 import UserPostsContainer from './redux/containers/UserPostsContainer';
 import EditPostContainer from './redux/containers/EditPostContainer';
 import CreatePostContainer from './redux/containers/CreatePostContainer';
-import * as type from './constants/actionTypes';
+import * as type from './redux/constants/actionTypes';
 import configureStore from './redux/store';
 import './style/index.css';
 

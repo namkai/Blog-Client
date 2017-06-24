@@ -17,6 +17,5 @@ export default function (ComposedComponent) {
 			);
 		}
 	}
-
 	return connect(({ user }) => ({ user }), actions)(UserManager);
 }

@@ -1,4 +1,4 @@
-import * as type from '../../constants/actionTypes';
+import * as type from '../constants/actionTypes';
 
 const intialState = {
 	posts: [],

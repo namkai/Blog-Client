@@ -1,5 +1,5 @@
-import * as type from '../../../constants/actionTypes';
-import * as api from '../../../constants/api';
+import * as type from '../../constants/actionTypes';
+import * as api from '../../constants/api';
 
 const signupUser = ({ name, email, password, profilePhoto, backgroundPhoto }) => dispatch =>
 	axios
