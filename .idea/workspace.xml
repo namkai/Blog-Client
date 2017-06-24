@@ -2,23 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="96430c30-0d1d-4c13-929f-d808304316bf" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/redux/reducers/entity_reducer.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/redux/reducers/hor/createEntityReducer.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/constants/actionTypes.js" afterPath="$PROJECT_DIR$/src/redux/constants/actionTypes.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/constants/api.js" afterPath="$PROJECT_DIR$/src/redux/constants/api.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/index.js" afterPath="$PROJECT_DIR$/src/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/redux/actions/authentication_actions.js" afterPath="$PROJECT_DIR$/src/redux/actions/authentication_actions.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/redux/actions/post_actions.js" afterPath="$PROJECT_DIR$/src/redux/actions/post_actions.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/redux/actions/query_actions.js" afterPath="$PROJECT_DIR$/src/redux/actions/query_actions.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/redux/hoc/manage_user.js" afterPath="$PROJECT_DIR$/src/redux/hoc/manage_user.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/redux/reducers/authentication_reducer.js" afterPath="$PROJECT_DIR$/src/redux/reducers/authentication_reducer.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/redux/reducers/index.js" afterPath="$PROJECT_DIR$/src/redux/reducers/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/redux/reducers/posts_reducer.js" afterPath="$PROJECT_DIR$/src/redux/reducers/posts_reducer.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/redux/reducers/query_reducer.js" afterPath="$PROJECT_DIR$/src/redux/reducers/query_reducer.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/redux/reducers/user_reducer.js" afterPath="$PROJECT_DIR$/src/redux/reducers/user_reducer.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/redux/thunks/authentication/signinUser.js" afterPath="$PROJECT_DIR$/src/redux/thunks/authentication/signinUser.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/redux/thunks/authentication/signupUser.js" afterPath="$PROJECT_DIR$/src/redux/thunks/authentication/signupUser.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/redux/reducers/entity_reducer.js" afterPath="$PROJECT_DIR$/src/redux/reducers/entity_reducer.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/redux/reducers/hor/createEntityReducer.js" afterPath="$PROJECT_DIR$/src/redux/reducers/hor/createEntityReducer.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -45,11 +30,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="entity_reducer.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="entity_reducer.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/redux/reducers/entity_reducer.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="18">
-              <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+            <state relative-caret-position="216">
+              <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -65,11 +50,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="createEntityReducer.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="createEntityReducer.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/redux/reducers/hor/createEntityReducer.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="774">
-              <caret line="43" column="0" lean-forward="true" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+            <state relative-caret-position="72">
+              <caret line="4" column="32" lean-forward="true" selection-start-line="4" selection-start-column="32" selection-end-line="4" selection-end-column="32" />
               <folding />
             </state>
           </provider>
@@ -193,9 +178,9 @@
         <option value="$PROJECT_DIR$/src/components/blog_posts.js" />
         <option value="$PROJECT_DIR$/src/components/navbar.js" />
         <option value="$PROJECT_DIR$/src/redux/hoc/manage_user.js" />
-        <option value="$PROJECT_DIR$/src/redux/reducers/hor/createEntityReducer.js" />
         <option value="$PROJECT_DIR$/src/redux/reducers/index.js" />
         <option value="$PROJECT_DIR$/src/redux/reducers/entity_reducer.js" />
+        <option value="$PROJECT_DIR$/src/redux/reducers/hor/createEntityReducer.js" />
       </list>
     </option>
   </component>
@@ -482,12 +467,12 @@
       <workItem from="1497897935961" duration="73000" />
       <workItem from="1497898022522" duration="197000" />
       <workItem from="1497898250833" duration="23477000" />
-      <workItem from="1497971443791" duration="69059000" />
+      <workItem from="1497971443791" duration="70537000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="106672000" />
+    <option name="totallyTimeSpent" value="108150000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -932,14 +917,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/redux/reducers/posts_reducer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/redux/reducers/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="324">
@@ -958,18 +935,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/redux/reducers/hor/createEntityReducer.js">
+    <entry file="file://$PROJECT_DIR$/src/redux/reducers/entity_reducer.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="774">
-          <caret line="43" column="0" lean-forward="true" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+        <state relative-caret-position="216">
+          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/redux/reducers/entity_reducer.js">
+    <entry file="file://$PROJECT_DIR$/src/redux/reducers/posts_reducer.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+        <state relative-caret-position="378">
+          <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/redux/reducers/hor/createEntityReducer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="4" column="32" lean-forward="true" selection-start-line="4" selection-start-column="32" selection-end-line="4" selection-end-column="32" />
           <folding />
         </state>
       </provider>
