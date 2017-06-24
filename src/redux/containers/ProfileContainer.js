@@ -1,7 +1,6 @@
 import { compose, lifecycle } from 'recompose';
 import { connect } from 'react-redux';
 
-import * as actions from '../actions/post_actions';
 import { getUserData } from '../actions/authentication_actions';
 import Profile from '../../components/profile';
 
@@ -9,7 +8,7 @@ const mapStateToProps = state => ({
 	user: state.user,
 });
 
-const connectToStore = connect(mapStateToProps, actions);
+const connectToStore = connect(mapStateToProps, { getUserData });
 
 const onDidMount = lifecycle({
 	componentDidMount() {
@@ -20,4 +19,4 @@ const onDidMount = lifecycle({
 	},
 });
 
-export default compose(connectToStore)(Profile);
+export default compose(connectToStore, onDidMount)(Profile);

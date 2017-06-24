@@ -1,26 +1,24 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Field, reduxForm } from 'redux-form';
+import { Field } from 'redux-form';
 import { history } from '../index';
-import managePost from '../redux/hoc/manage_posts';
-import manageUser from '../redux/hoc/manage_user';
 import renderInput from './renderInput';
 
-const EditPost = (props) => {
+const EditPost = ({ posts, editPost, handleSubmit }) => {
 	const editExistingPost = (post) => {
 		const newPost = {
 			...post,
 			author: {
-				name: props.posts[0].author.name,
-				id: props.posts[0].author.id,
+				name: posts[0].author.name,
+				id: posts[0].author.id,
 			},
 		};
-		props.editPost(newPost);
+		editPost(newPost);
 		history.push('/');
 	};
 	return (
 		<div style={style.formContainer}>
-			<form onSubmit={props.handleSubmit(post => editExistingPost(post))}
+			<form onSubmit={handleSubmit(post => editExistingPost(post))}
 			      style={{ width: '800px', marginTop: '50px' }}>
 				<fieldset className="form-group">
 					<label>Title:</label>
@@ -70,4 +68,4 @@ const style = {
 	},
 };
 
-export default reduxForm({ form: 'newpost' })(manageUser(managePost(EditPost)));
+export default EditPost;

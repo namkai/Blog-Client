@@ -69,4 +69,4 @@ const style = {
 	},
 };
 
-export default connect(null, actions)(reduxForm({ form: 'newpost' })(requireAuth(manageUser(CreatePost))));
+export default CreatePost;

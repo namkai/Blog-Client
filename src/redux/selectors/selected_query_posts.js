@@ -1,9 +1,10 @@
 import { createSelector } from 'reselect';
+//import getQuery from './query_selector';
+
 
 // Grabs posts state from store.
 const postsSelector = state => state.posts.posts;
 
-// Grabs query state from store.
 const querySelector = state => state.query;
 
 // Filters the Cardlist based on selectedTab as well as the current query

@@ -16,6 +16,7 @@ import BlogPostsContainer from './redux/containers/BlogPostsContainer';
 import ProfileContainer from './redux/containers/ProfileContainer';
 import UserPostsContainer from './redux/containers/UserPostsContainer';
 import EditPostContainer from './redux/containers/EditPostContainer';
+import CreatePostContainer from './redux/containers/CreatePostContainer';
 import * as type from './constants/actionTypes';
 import configureStore from './redux/store';
 import './style/index.css';
@@ -27,7 +28,7 @@ const token = localStorage.getItem('token');
 // If we have a token, consider the user to be signed in
 if (token) {
 	// we need to update an application
-	store.dispatch({ type: type.AUTH_USER });
+	store.dispatch({ type: type.AUTH_USER_COMPLETED });
 }
 
 ReactDOM.render(
@@ -41,7 +42,7 @@ ReactDOM.render(
 				<Route path="/signup" component={Signup}/>
 				<Route path="/profile" component={requireAuth(ProfileContainer)}/>
 				<Route path="/profile/posts" component={requireAuth(UserPostsContainer)}/>
-				<Route path="/createpost" component={requireAuth(CreatePost)}/>
+				<Route path="/createpost" component={requireAuth(CreatePostContainer)}/>
 				<Route path="/edit" component={requireAuth(EditPostContainer)}/>
 			</switch>
 		</Router>

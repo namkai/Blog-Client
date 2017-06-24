@@ -1,42 +1,32 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
+import BlogPostView from './layout/BlogPostView';
+import Loading from './loading';
 import Post from './post';
 import PostHeader from './post_header';
-import Searchbar from './search_bar';
 import PostShow from './show_post';
-import Loading from './loading';
+import SearchBar from './search_bar';
 import ProfileCard from './profile_card';
 
-class BlogPosts extends PureComponent {
-	render() {
-		const { posts, selectPost, deletePost, addComment } = this.props;
-		let list = null;
-		let header = null;
-		if (list === null) {
-			list = <Loading />
-		}
-		if (posts.length === 1) {
-			header = <PostHeader {...posts[0]} selectPost={selectPost} deletePost={deletePost} />;
-			list = <PostShow {...posts[0]} selectPost={selectPost} addComment={addComment} />;
-		} else if (posts.length > 1) {
-			header = <Searchbar />;
-			list = posts.map(post => <Post {...post} selectPost={selectPost} />);
-		}
-		return (
-			<div className="container pt-4">
-				<div className="row">
-					<div className="col-lg-3">
-						<ProfileCard />
-					</div>
-					<div className="col-lg-6">
-						<ul className="list-group media-list media-list-stream mb-4">
-							{ header }
-							{ list }
-						</ul>
-					</div>
-				</div>
-			</div>
-		);
-	};
-}
+const BlogPosts = ({ posts, selectPost, deletePost, addComment, user, query, updateQuery }) => {
+	let list = null;
+	let header = null;
+
+	if (list === null) {
+		list = <Loading />;
+	}
+	if (posts.length === 1) {
+		header = <PostHeader {...posts[0]} selectPost={selectPost} deletePost={deletePost}/>;
+		list = <PostShow {...posts[0]} selectPost={selectPost} addComment={addComment}/>;
+	} else if (posts.length > 1) {
+		list = posts.map(post => <Post {...post} selectPost={selectPost}/>);
+	}
+	return (
+		<BlogPostView card={ <ProfileCard {...user} />}>
+			<SearchBar query={query} updateQuery={updateQuery}/>
+			{ header }
+			{ list }
+		</BlogPostView>
+	);
+};
 
 export default BlogPosts;

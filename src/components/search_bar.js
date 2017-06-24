@@ -1,8 +1,6 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import { updateQuery } from '../redux/actions/query_actions';
 
-export const Searchbar = ({ query, updateQuery }) =>
+export const SearchBar = ({ query, updateQuery }) =>
 	<li className="media list-group-item p-4">
 		<div className="input-group">
 			<input
@@ -15,4 +13,4 @@ export const Searchbar = ({ query, updateQuery }) =>
 		</div>
 	</li>;
 
-export default connect(({ query }) => ({ query }), { updateQuery })(Searchbar);
+export default SearchBar;
