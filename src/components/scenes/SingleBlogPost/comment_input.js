@@ -1,16 +1,16 @@
 import React from 'react';
 import { Field, reduxForm } from 'redux-form';
-import renderInput from './renderInput';
+import renderInput from '../../common/renderInput';
 
 
-const CommentInput = ({ handleSubmit, author, addComment, postId }) => {
+const CommentInput = ({ handleSubmit, user, addComment, postId }) => {
 	const onSubmit = (comment) => {
 		const newComment = {
 			postId,
 			author: {
-				_id: author._id,
-				name: author.name,
-				profilePhoto: author.profilePhoto,
+				_id: user._id,
+				name: user.name,
+				profilePhoto: user.profilePhoto,
 			},
 			comment: {
 				text: comment.comment,

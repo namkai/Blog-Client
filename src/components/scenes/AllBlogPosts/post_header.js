@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import manageUser from '../redux/hoc/manage_user';
-import '../style/Postheader.css';
+import manageUser from '../../../redux/hoc/manage_user';
+import '../../../style/Postheader.css';
 
 const PostHeader = ({ _id, author, selectPost, deletePost, user }) => {
 	const currentUser = () => {

@@ -1,9 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Field, reduxForm } from 'redux-form';
-import * as actions from '../../redux/actions/authentication_actions';
-import renderInput from '../renderInput';
-import logo from '../../style/v4/docs/assets/img/brand.png';
+import * as actions from '../../../redux/actions/authentication_actions';
+import renderInput from '../../common/renderInput';
+import logo from '../../../style/v4/docs/assets/img/brand.png';
 
 const Signin = ({ handleSubmit, signinUser, auth: { error } }) => {
 	const renderAlert = () => {

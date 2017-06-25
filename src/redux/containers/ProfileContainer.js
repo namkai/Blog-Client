@@ -2,7 +2,7 @@ import { compose, lifecycle } from 'recompose';
 import { connect } from 'react-redux';
 
 import { getUserData } from '../actions/authentication_actions';
-import Profile from '../../components/profile';
+import Profile from '../../components/scenes/Profile/index';
 
 const mapStateToProps = state => ({
 	user: state.user,

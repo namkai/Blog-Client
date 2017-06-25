@@ -1,8 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Field, reduxForm } from 'redux-form';
-import * as actions from '../../redux/actions/authentication_actions';
-import renderInput from '../renderInput';
+import * as actions from '../../../redux/actions/authentication_actions';
+import renderInput from '../../common/renderInput';
 
 const Signup = ({ handleSubmit, signupUser, auth: { error } }) => {
 	const renderAlert = () => {

@@ -2,7 +2,7 @@ import React from 'react';
 import Comment from './comment';
 import CommentInput from './comment_input';
 
-const PostsShow = ({ title, body, image, author, comments, _id, addComment }) => {
+const PostsShow = ({ title, body, image, author, comments, _id, addComment, user }) => {
 	const commentList = comments.map(comment => <Comment {...comment} />);
 	return (
 		<li className="media list-group-item p-4">
@@ -21,7 +21,7 @@ const PostsShow = ({ title, body, image, author, comments, _id, addComment }) =>
 					</p>
 					<ul className="media-list">
 						{commentList}
-						<CommentInput author={author} postId={_id} addComment={addComment} />
+						<CommentInput postId={_id} addComment={addComment} user={user} />
 					</ul>
 				</div>
 			</div>

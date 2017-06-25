@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { compose, lifecycle } from 'recompose';
-import BlogPosts from '../../components/blog_posts';
+import BlogPosts from '../../components/scenes/AllBlogPosts/index';
 
 import * as actions from '../actions/post_actions';
 import { getUserData } from '../actions/authentication_actions';

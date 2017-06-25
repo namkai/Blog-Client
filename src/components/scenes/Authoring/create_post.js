@@ -1,25 +1,28 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { Field } from 'redux-form';
-import { history } from '../index';
-import renderInput from './renderInput';
+import { connect } from 'react-redux';
+import { Field, reduxForm } from 'redux-form';
+import * as actions from '../../../redux/actions/post_actions';
+import { history } from '../../../index';
+import manageUser from '../../../redux/hoc/manage_user';
+import requireAuth from '../../../redux/hoc/require_authentication';
+import renderInput from '../../common/renderInput';
 
-const EditPost = ({ posts, editPost, handleSubmit }) => {
-	const editExistingPost = (post) => {
+const CreatePost = ({ handleSubmit, createPost, user: { _id, name, profilePhoto } }) => {
+	const createNewPost = (post) => {
 		const newPost = {
 			...post,
 			author: {
-				name: posts[0].author.name,
-				id: posts[0].author.id,
+				name,
+				id: _id,
+				profilePhoto,
 			},
 		};
-		editPost(newPost);
+		createPost(newPost);
 		history.push('/');
 	};
 	return (
 		<div style={style.formContainer}>
-			<form onSubmit={handleSubmit(post => editExistingPost(post))}
-			      style={{ width: '800px', marginTop: '50px' }}>
+			<form onSubmit={handleSubmit(user => createNewPost(user))} style={{width: '800px', marginTop: '50px'}}>
 				<fieldset className="form-group">
 					<label>Title:</label>
 					<Field
@@ -52,8 +55,6 @@ const EditPost = ({ posts, editPost, handleSubmit }) => {
 						component={renderInput}
 					/>
 				</fieldset>
-				<button className="btn btn-secondary"><Link to="/">Go Back</Link></button>
-				<span>   </span>
 				<button action="submit" className="btn btn-primary">Submit Post!</button>
 			</form>
 		</div>
@@ -68,4 +69,4 @@ const style = {
 	},
 };
 
-export default EditPost;
+export default CreatePost;

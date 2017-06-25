@@ -1,9 +1,9 @@
 import React from 'react';
-import BlogPostLayout from './layout/BlogPostLayout';
-import Loading from './loading';
+import BlogPostLayout from './BlogPostLayout';
+import Loading from '../../common/loading';
 import Post from './post';
 import PostHeader from './post_header';
-import PostShow from './show_post';
+import PostShow from '../SingleBlogPost/index';
 import SearchBar from './search_bar';
 import ProfileCard from './profile_card';
 
@@ -16,7 +16,7 @@ const BlogPosts = ({ posts, selectPost, deletePost, addComment, user, query, upd
 	}
 	if (posts.length === 1) {
 		header = <PostHeader {...posts[0]} selectPost={selectPost} deletePost={deletePost}/>;
-		list = <PostShow {...posts[0]} selectPost={selectPost} addComment={addComment}/>;
+		list = <PostShow {...posts[0]} selectPost={selectPost} addComment={addComment} user={user} />;
 	} else if (posts.length > 1) {
 		list = posts.map(post => <Post {...post} selectPost={selectPost}/>);
 	}

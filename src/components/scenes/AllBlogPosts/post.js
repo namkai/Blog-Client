@@ -1,5 +1,5 @@
 import React from 'react';
-import '../style/post.css';
+import '../../../style/post.css';
 
 const Post = ({ _id, title, image, body, description, author, selectPost }) => (
 	<li className="media list-group-item p-4 post" onClick={() => selectPost(_id)}>

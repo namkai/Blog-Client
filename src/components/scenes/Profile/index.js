@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import '../style/profile.css';
+import '../../../style/profile.css';
 
 const Profile = ({ user }) => (
 	<div className="profile-header text-center" style={{ backgroundImage: `url(${user.backgroundPhoto})` }}>

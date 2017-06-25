@@ -1,7 +1,7 @@
 import axios from 'axios';
+import { normalize } from 'normalizr';
 import * as type from '../constants/actionTypes';
 import * as api from '../constants/api';
-import { normalize } from 'normalizr';
 import * as schema from '../normalizr/entities';
 
 export const fetchMessage = () => dispatch =>
@@ -13,11 +13,12 @@ export const fetchPosts = () => dispatch =>
 	axios
 		.get(`${api.ROOT}/posts`)
 		.then((response) => {
+			console.log(response);
 			console.log(
 				'normalized',
-				normalize(response, schema.arrayOfPosts),
+				normalize(response.data.posts, schema.arrayOfPosts),
 			);
-			dispatch({ type: type.FETCH_POSTS_COMPLETED, payload: response.data })
+			dispatch({ type: type.FETCH_POSTS_COMPLETED, payload: response.data });
 		})
 		.catch(err => dispatch({ type: type.FETCH_POSTS_FAILED }));
 

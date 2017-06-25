@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { compose, lifecycle } from 'recompose';
-import EditPost from '../../components/edit_post';
+import EditPost from '../../components/scenes/Authoring/edit_post';
 import { reduxForm } from 'redux-form';
 
 import { history } from '../../index';

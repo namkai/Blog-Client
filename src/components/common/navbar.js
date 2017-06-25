@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 
-import logo from '../style/v4/docs/assets/img/brand-white.png';
+import logo from '../../style/v4/docs/assets/img/brand-white.png';
 
 
 const Navbar = ({ authenticated }) => {

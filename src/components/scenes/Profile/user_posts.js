@@ -1,5 +1,5 @@
 import React from 'react';
-import Loading from './loading';
+import Loading from '../../common/loading';
 import PostCard from './post_card';
 
 const UserPosts = ({ posts }) => {
