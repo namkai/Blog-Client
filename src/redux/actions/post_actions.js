@@ -13,11 +13,6 @@ export const fetchPosts = () => dispatch =>
 	axios
 		.get(`${api.ROOT}/posts`)
 		.then((response) => {
-			console.log(response);
-			console.log(
-				'normalized',
-				normalize(response.data.posts, schema.arrayOfPosts),
-			);
 			dispatch({ type: type.FETCH_POSTS_COMPLETED, payload: response.data });
 		})
 		.catch(err => dispatch({ type: type.FETCH_POSTS_FAILED }));

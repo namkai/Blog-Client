@@ -1,10 +1,11 @@
 import { schema } from 'normalizr';
 
+const author = new schema.Entity('author');
 
-const post = new schema.Entity('post', {
-	author: new schema.Entity('postAuthor'),
+export const post = new schema.Entity('post', {
+	author,
 	comments: [ new schema.Entity('comment', {
-		author: new schema.Entity('commentAuthor'),
+		author,
 	}, { idAttribute: '_id' })],
 }, {idAttribute: '_id'});
 

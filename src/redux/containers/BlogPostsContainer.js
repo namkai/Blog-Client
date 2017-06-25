@@ -5,10 +5,10 @@ import BlogPosts from '../../components/scenes/AllBlogPosts/index';
 import * as actions from '../actions/post_actions';
 import { getUserData } from '../actions/authentication_actions';
 import { updateQuery } from '../actions/query_actions';
-import getFilteredPostState from '../selectors/selected_post';
+import getAllPosts from '../selectors/all_posts_selector';
 
 const mapStateToProps = (state, ownProps) => ({
-	posts: getFilteredPostState(state),
+	posts: getAllPosts(state),
 	user: state.user,
 	query: state.query,
 });
