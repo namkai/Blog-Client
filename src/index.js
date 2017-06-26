@@ -11,7 +11,7 @@ import Signout from './components/scenes/Authentication/signout';
 import Signup from './components/scenes/Authentication/signup';
 import CreatePost from './components/scenes/Authoring/create_post';
 import EditPost from './components/scenes/Authoring/edit_post';
-import requireAuth from './redux/hoc/require_authentication';
+import requireAuth from './redux/containers/hoc/require_authentication';
 import BlogPostsContainer from './redux/containers/BlogPostsContainer';
 import ProfileContainer from './redux/containers/ProfileContainer';
 import UserPostsContainer from './redux/containers/UserPostsContainer';

@@ -5,7 +5,10 @@ import { createSelector } from 'reselect';
 const resultSelector = state => state.entities.result;
 const entitiesSelector = state => state.entities;
 
-const getAllPosts = (result, entities) => denormalize(result, schema.arrayOfPosts, entities);
+const getAllPosts = (result, entities) => {
+	console.log(entities, `i'm the entities!`)
+	return denormalize(result, schema.arrayOfPosts, entities)
+};
 
 export default createSelector(
 	resultSelector,

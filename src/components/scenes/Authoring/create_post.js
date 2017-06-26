@@ -3,8 +3,8 @@ import { connect } from 'react-redux';
 import { Field, reduxForm } from 'redux-form';
 import * as actions from '../../../redux/actions/post_actions';
 import { history } from '../../../index';
-import manageUser from '../../../redux/hoc/manage_user';
-import requireAuth from '../../../redux/hoc/require_authentication';
+import manageUser from '../../../redux/containers/hoc/manage_user';
+import requireAuth from '../../../redux/containers/hoc/require_authentication';
 import renderInput from '../../common/renderInput';
 
 const CreatePost = ({ handleSubmit, createPost, user: { _id, name, profilePhoto } }) => {

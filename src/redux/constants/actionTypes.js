@@ -1,8 +1,12 @@
 const constants = [
 	'UNAUTH_USER_',
+	'FIND_AUTHORS_',
+	'FIND_POSTS_',
+	'FIND_COMMENTS_',
 	'AUTH_ERROR',
 	'AUTH_USER_',
 	'FETCH_POSTS_',
+	'GET_AUTHOR_',
 	'SELECT_POST',
 	'ADD_POST_',
 	'GET_USER_',
