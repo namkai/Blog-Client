@@ -1,33 +1,15 @@
 import React from 'react';
-import Comment from './comment';
-import CommentInput from './comment_input';
+import ProfileCard from '../../common/profile_card';
+import SingleBlogPostLayout from './single_blog_post_layout';
+import BlogPostBody from './blog_post_body';
+import PostHeader from './post_header';
 
-const PostsShow = ({ title, body, image, author, comments, _id, addComment, user }) => {
-	const commentList = comments.map(comment => <Comment {...comment} />);
-	return (
-		<li className="media list-group-item p-4">
-			<img
-				className="media-object d-flex align-self-start mr-3"
-				src={image}
-			/>
-			<div className="media-body">
-				<div className="media-body-text">
-					<div className="media-heading">
-						<small className="float-right text-muted">{ author.name }</small>
-						<h6>{title}</h6>
-					</div>
-					<p>
-						{body}
-					</p>
-					<ul className="media-list">
-						{commentList}
-						<CommentInput postId={_id} addComment={addComment} user={user} />
-					</ul>
-				</div>
-			</div>
-		</li>
-	);
-};
+const SingleBlogPost = ({ post, author, selectPost, deletePost }) => (
+	<SingleBlogPostLayout card={ <ProfileCard { ...author } />}>
+		<PostHeader {...post } selectPost={selectPost} deletePost={deletePost} />
+		<BlogPostBody { ...post } />
+	</SingleBlogPostLayout>
+);
 
 
-export default PostsShow;
+export default SingleBlogPost;

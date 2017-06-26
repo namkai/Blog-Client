@@ -1,10 +1,15 @@
 import { denormalize } from 'normalizr';
 import * as schema from '../normalizr/entities';
+import { createSelector } from 'reselect';
 
-const getAllPosts = (state) => {
-	const result = state.entities.result;
-	return denormalize(result, schema.arrayOfPosts, state.entities);
-};
+const resultSelector = state => state.entities.result;
+const entitiesSelector = state => state.entities;
 
-export default getAllPosts;
+const getAllPosts = (result, entities) => denormalize(result, schema.arrayOfPosts, entities);
+
+export default createSelector(
+	resultSelector,
+	entitiesSelector,
+	getAllPosts,
+);
 

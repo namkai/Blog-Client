@@ -1,28 +1,22 @@
 import axios from 'axios';
-import { normalize } from 'normalizr';
 import * as type from '../constants/actionTypes';
 import * as api from '../constants/api';
-import * as schema from '../normalizr/entities';
 
-export const fetchMessage = () => dispatch =>
+export const fetchPost = (id) => dispatch =>
 	axios
-		.get(api.ROOT, { headers: { authorization: localStorage.getItem('token') } })
-		.then(response => console.log(response.data));
+		.get(`${api.ROOT}/posts/${id}`)
+		.then(res => ({ type: type.FETCH_POST_COMPLETED, payload: res }));
 
 export const fetchPosts = () => dispatch => {
-	console.log(`i'm hit! in the fetchPOSTS`)
 	return axios
 		.get(`http://localhost:3090/posts`)
 		.then((response) => {
-
-			console.log(response)
 			return dispatch({ type: type.FETCH_POSTS_COMPLETED, payload: response.data });
 		})
 		.catch(err => {
-			console.log(`I"m the error`, err);
-			return dispatch({ type: type.FETCH_POSTS_FAILED })
+			return dispatch({ type: type.FETCH_POSTS_FAILED });
 		});
-}
+};
 
 export const createPost = payload => dispatch =>
 	axios
@@ -30,7 +24,7 @@ export const createPost = payload => dispatch =>
 		.then(response => dispatch({ type: type.ADD_POST_COMPLETED, payload: response }))
 		.catch(err => console.log(err));
 
-export const selectPost = postId => ({ type: type.SELECT_POST_COMPLETED, payload: postId });
+export const selectPost = postId => ({ type: type.SELECT_POST, payload: postId });
 
 export const deletePost = postId => dispatch =>
 	axios

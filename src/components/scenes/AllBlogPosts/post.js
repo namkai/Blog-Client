@@ -1,5 +1,7 @@
 import React from 'react';
-import '../../../style/post.css';
+import { Link } from 'react-router-dom';
+
+//import '../../../style/post.css';
 
 const Post = ({ _id, title, image, body, description, author, selectPost }) => (
 	<li className="media list-group-item p-4 post" onClick={() => selectPost(_id)}>
@@ -10,13 +12,14 @@ const Post = ({ _id, title, image, body, description, author, selectPost }) => (
 			<div className="media-body-text" style={{ width: '100%' }}>
 				<div className="media-heading">
 					<small className="float-right text-muted">{ author.name }</small>
-					<h6>{title}</h6>
+					<Link to={`posts/${_id}`} onClick={() => selectPost(_id)}><h6>{title}</h6></Link>
 				</div>
 				<p>
 					{description}
 				</p>
 			</div>
 		</div>
+
 	</li>
 );
 
