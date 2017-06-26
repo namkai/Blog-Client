@@ -38,7 +38,10 @@ export const signoutUser = () => {
 	return { type: type.UNAUTH_USER_COMPLETED };
 };
 
-export const getUserData = token => dispatch =>
+export const getUserData = token => dispatch => {
+	console.log(`i'm hit!`)
 	axios
 		.get(`${api.ROOT}`, { headers: { Authorization: token } })
-		.then(({ data: { user } }) => dispatch({ type: type.GET_USER_COMPLETED, payload: user }));
+		.then(({ data: { user } }) => dispatch({ type: type.GET_USER_COMPLETED, payload: user }))
+		.catch(err => console.log(err))
+}

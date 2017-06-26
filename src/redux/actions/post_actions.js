@@ -9,14 +9,20 @@ export const fetchMessage = () => dispatch =>
 		.get(api.ROOT, { headers: { authorization: localStorage.getItem('token') } })
 		.then(response => console.log(response.data));
 
-export const fetchPosts = () => dispatch =>
-	axios
-		.get(`${api.ROOT}/posts`)
+export const fetchPosts = () => dispatch => {
+	console.log(`i'm hit! in the fetchPOSTS`)
+	return axios
+		.get(`http://localhost:3090/posts`)
 		.then((response) => {
-			dispatch({ type: type.FETCH_POSTS_COMPLETED, payload: response.data });
-		})
-		.catch(err => dispatch({ type: type.FETCH_POSTS_FAILED }));
 
+			console.log(response)
+			return dispatch({ type: type.FETCH_POSTS_COMPLETED, payload: response.data });
+		})
+		.catch(err => {
+			console.log(`I"m the error`, err);
+			return dispatch({ type: type.FETCH_POSTS_FAILED })
+		});
+}
 
 export const createPost = payload => dispatch =>
 	axios

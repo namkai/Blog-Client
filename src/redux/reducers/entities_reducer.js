@@ -3,15 +3,17 @@ import * as type from '../constants/actionTypes';
 import * as schema from '../normalizr/entities';
 
 const intialState = {
-	posts: [],
-	selectedPostId: '',
+	posts: {},
+	comments: {},
+	authors: {},
+	result: [],
 };
 
-export default function (state = {}, action) {
+export default function (state = intialState, action) {
 	switch (action.type) {
 	case type.FETCH_POSTS_COMPLETED:
 		const allNormalizedPosts = normalize(action.payload.posts, schema.arrayOfPosts);
-		return { ...allNormalizedPosts.entities };
+		return { ...allNormalizedPosts.entities, result: allNormalizedPosts.result };
 	case type.ADD_POST:
 		const normalizedPost = normalize(action.payload.data, schema.post);
 		return { ...state, ...normalizedPost.entities };

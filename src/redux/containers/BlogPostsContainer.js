@@ -1,9 +1,9 @@
 import { connect } from 'react-redux';
 import { compose, lifecycle } from 'recompose';
 import BlogPosts from '../../components/scenes/AllBlogPosts/index';
+import { getUserData } from '../actions/authentication_actions';
 
 import * as actions from '../actions/post_actions';
-import { getUserData } from '../actions/authentication_actions';
 import { updateQuery } from '../actions/query_actions';
 import getAllPosts from '../selectors/all_posts_selector';
 
@@ -17,8 +17,12 @@ const connectToStore = connect(mapStateToProps, { ...actions, getUserData, updat
 
 const onDidMount = lifecycle({
 	componentDidMount() {
-		this.props.fetchPosts();
-		this.props.getUserData();
+		if (Object.keys(this.props.posts).length === 0) {
+			this.props.fetchPosts();
+		}
+		if (Object.keys(this.props.user).length === 0) {
+			this.props.getUserData();
+		}
 	},
 });
 
