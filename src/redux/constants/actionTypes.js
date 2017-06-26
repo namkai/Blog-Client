@@ -3,6 +3,7 @@ const constants = [
 	'FIND_AUTHORS_',
 	'FIND_POSTS_',
 	'FIND_COMMENTS_',
+	'FIND_RESULTS_',
 	'AUTH_ERROR',
 	'AUTH_USER_',
 	'FETCH_POSTS_',
