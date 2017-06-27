@@ -4,6 +4,7 @@ import renderInput from '../../common/renderInput';
 
 
 const CommentInput = ({ handleSubmit, user, addComment, postId }) => {
+	console.log(user, `i'm the user`)
 	const onSubmit = (comment) => {
 		const newComment = {
 			postId,

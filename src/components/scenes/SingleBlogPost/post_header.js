@@ -5,7 +5,7 @@ import '../../../style/Postheader.css';
 
 const PostHeader = ({ _id, author, selectPost, deletePost, user }) => {
 	const currentUser = () => {
-		if (author.id === user._id) {
+		if ( author !== undefined && author.id === user._id) {
 			return (
 				<div className="edit">
 					<Link to="/edit">Edit</Link>

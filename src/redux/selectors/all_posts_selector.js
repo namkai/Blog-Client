@@ -6,7 +6,7 @@ const resultSelector = state => state.entities.result;
 const entitiesSelector = state => state.entities;
 
 const getAllPosts = (result, entities) => {
-	console.log(entities, `i'm the entities!`)
+	console.log(result, `i'm THE RESULT IN GET ALL POSTS`)
 	return denormalize(result, schema.arrayOfPosts, entities)
 };
 
