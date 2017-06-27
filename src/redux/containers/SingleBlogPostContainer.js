@@ -8,7 +8,7 @@ import singlePostSelector from '../selectors/single_post_selector';
 import { fetchEntity } from '../thunks/crud/fetch';
 
 const mapStateToProps = (state, ownProps) => ({
-	post: singlePostSelector(state),
+	post: singlePostSelector(state, ownProps.match.params.id),
 	author: state.selectedPost.author,
 	user: state.user,
 });

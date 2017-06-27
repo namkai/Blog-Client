@@ -17,6 +17,7 @@ const entities = (state = initialState, action) => {
 	state = posts(state, action);
 	state = comments(state, action);
 	state = result(state, action);
+	console.log(`i'm the state!--------------------`, state)
 	return state;
 };
 

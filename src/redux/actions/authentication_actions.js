@@ -39,7 +39,7 @@ export const signoutUser = () => {
 };
 
 export const getUserData = token => dispatch => {
-	console.log(`i'm hit!`)
+	console.log(`i'm hit!`, token)
 	axios
 		.get(`${api.ROOT}`, { headers: { Authorization: token } })
 		.then(({ data: { user } }) => dispatch({ type: type.GET_USER_COMPLETED, payload: user }))
