@@ -5,7 +5,7 @@ import { createSelector } from 'reselect';
 const resultSelector = state => state.entities.result;
 const entitiesSelector = state => state.entities;
 
-const getAllPosts = (result, entities) => denormalize(result, schema.arrayOfPosts, entities);
+const getAllPosts = (result, entities) => denormalize(result, schema.array_of_posts, entities);
 
 export default createSelector(
 	resultSelector,

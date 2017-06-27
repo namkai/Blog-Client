@@ -9,18 +9,18 @@ export const fetchPost = (id) => dispatch =>
 		.get(`${api.ROOT}/posts/${id}`)
 		.then(res => ({ type: type.FETCH_POST_COMPLETED, payload: res }));
 
-export const fetchPosts = () => dispatch => {
-	return axios
-		.get(`http://localhost:3090/posts`)
-		.then((response) => {
-			const payload = normalize(response.data.posts, schema.arrayOfPosts);
-			return dispatch({ type: type.FETCH_POSTS_COMPLETED, payload });
-		})
-		.catch(err => {
-			return dispatch({ type: type.FETCH_POSTS_FAILED });
-		});
-};
 
+//export const fetchPosts = () => dispatch => {
+//	return axios
+//		.get(`http://localhost:3090/posts`)
+//		.then((response) => {
+//			const payload = normalize(response.data.posts, schema.arrayOfPosts);
+//			return dispatch({ type: type.FETCH_POSTS_COMPLETED, payload });
+//		})
+//		.catch(err => {
+//			return dispatch({ type: type.FETCH_POSTS_FAILED });
+//		});
+//};
 export const createPost = payload => dispatch =>
 	axios
 		.post(`${api.ROOT}/posts`, payload)

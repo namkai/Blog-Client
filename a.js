@@ -1,5 +1,9 @@
 
 const post = {
+	author: {
+		id: 855,
+		name: 'Namkai',
+	}
 	id: 123,
 	name: 'Test',
 	comments: [
