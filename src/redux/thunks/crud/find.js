@@ -8,7 +8,6 @@ export const findEntities = () => dispatch =>
 	axios
 		.get(`${api.ROOT}/posts`)
 		.then((response) => {
-			console.log(response, `i'm the response!`)
 			const normalizedData = normalize(response.data.posts, schema.arrayOfPosts);
 			dispatch({ type: type.FIND_POSTS_COMPLETED, payload: normalizedData.entities.posts });
 			dispatch({ type: type.FIND_COMMENTS_COMPLETED, payload: normalizedData.entities.comments });

@@ -26,8 +26,8 @@ export default function createEntityReducer(entityName = '') {
 			// UPDATE ONE  UPDATE_USER_*
 		case `UPDATE_${entityConstant}_PENDING`:
 			return { ...state, [entityName]: payload };
-		case `UPDATE_${entityConstant}_COMPLETED`:
-			return { ...state, [entityName]: { ...[entityName] } };
+			case `UPDATE_${entityConstant}_COMPLETED`:
+			return { ...state, [entityName]: { ...state[entityName], ...payload } };
 		case `UPDATE_${entityConstant}_FAILED`:
 			// DELETE ONE    DELETE_USER_*
 		case `DELETE_${entityConstant}_PENDING`:

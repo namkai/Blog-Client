@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 //import '../../../style/post.css';
 
 const Post = ({ _id, title, image, body, description, author, selectPost }) => {
-	console.log(author, title, 'post')
 	return (
 		<li className="media list-group-item p-4 post" onClick={() => selectPost(_id)}>
 			<img

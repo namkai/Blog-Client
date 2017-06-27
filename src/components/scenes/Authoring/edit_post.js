@@ -4,16 +4,17 @@ import { Field } from 'redux-form';
 import { history } from '../../../index';
 import renderInput from '../../common/renderInput';
 
-const EditPost = ({ posts, editPost, handleSubmit }) => {
+const EditPost = ({ post: { author }, updateEntity, handleSubmit }) => {
+	console.log(author,`i'm the author!` )
 	const editExistingPost = (post) => {
 		const newPost = {
 			...post,
 			author: {
-				name: posts[0].author.name,
-				id: posts[0].author.id,
+				name: author.name,
+				id: author.id,
 			},
 		};
-		editPost(newPost);
+		updateEntity(newPost);
 		history.push('/');
 	};
 	return (

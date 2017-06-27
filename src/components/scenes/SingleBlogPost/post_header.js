@@ -8,7 +8,7 @@ const PostHeader = ({ _id, author, selectPost, deletePost, user }) => {
 		if ( author !== undefined && author.id === user._id) {
 			return (
 				<div className="edit">
-					<Link to="/edit">Edit</Link>
+					<Link to="/edit" onClick={() => selectPost(_id)}>Edit</Link>
 					<a href="#" onClick={() => deletePost(_id)}>Delete</a>
 				</div>
 			);
