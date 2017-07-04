@@ -7,8 +7,8 @@ import * as actions from '../actions/post_actions';
 import singlePostSelector from '../selectors/single_post_selector';
 import { fetchEntity } from '../thunks/crud/fetch';
 
-const mapStateToProps = (state, ownProps) => ({
-	post: singlePostSelector(state, ownProps.match.params.id),
+const mapStateToProps = (state, props) => ({
+	post: singlePostSelector(state, props),
 	author: state.selectedPost.author,
 	user: state.user,
 });

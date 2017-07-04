@@ -8,7 +8,7 @@ import * as actions from '../actions/post_actions';
 import singlePostSelector from '../selectors/single_post_selector';
 
 const mapStateToProps = (state, ownProps) => ({
-	post: singlePostSelector(state),
+	post: singlePostSelector(state, ownProps),
 	user: state.user,
 });
 
@@ -18,7 +18,8 @@ const connectToStore = connect(mapStateToProps, {...actions, updateEntity });
 
 const onWillMount = lifecycle({
 	componentWillMount() {
-		if (this.props.post.length === 0) {
+		console.log(this.props, `i'm hte props`)
+		if (this.props.post  === undefined) {
 			history.push('/');
 		}
 		this.props.initialize(this.props.post);

@@ -12,7 +12,7 @@ const mapStateToProps = state => ({
 const onDidMount = lifecycle({
 	componentDidMount() {
 		if (this.props.posts.length === 0) {
-			this.props.fetchPosts();
+//			this.props.fetchPosts();
 		}
 	},
 });

@@ -2,9 +2,13 @@ import { denormalize } from 'normalizr';
 import { createSelector } from 'reselect';
 import * as schema from '../normalizr/entities';
 
-const selectedPost = (state, id) => id;
+const selectedPost = (state, props) => {
+	console.log(`i'm the props`, props);
+	return props.match.params.id;
+};
 
 const entitiesSelector = state => {
+	console.log(state, `i'm the state! in the entities selector`);
 	const entities = state.entities;
 	return entities;
 };

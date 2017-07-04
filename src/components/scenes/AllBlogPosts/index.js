@@ -1,7 +1,7 @@
 import React from 'react';
 import Loading from '../../common/loading';
 import ProfileCard from '../../common/profile_card';
-import BlogPostLayout from './blog_post_layout';
+import BlogPostLayout from './layout';
 import Post from './post';
 import SearchBar from './search_bar';
 

@@ -21,6 +21,7 @@ export default function createEntityReducer(entityName = '') {
 		case `FETCH_${entityConstant}_STARTED`:
 			return { ...state, [entityName]: payload };
 			case `FETCH_${entityConstant}_COMPLETED`:
+				console.log(`i'm the payload!`, payload)
 			normalizedData = normalize(payload, schema.post);
 			return { ..._.merge(state, normalizedData.entities), ..._.merge(state.result, normalizedData.result)};
 		case `FETCH_${entityConstant}_FAILED`:

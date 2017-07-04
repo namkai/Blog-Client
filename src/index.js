@@ -44,8 +44,8 @@ ReactDOM.render(
 				<Route path="/profile" component={requireAuth(ProfileContainer)}/>
 				<Route path="/profile/posts" component={requireAuth(UserPostsContainer)}/>
 				<Route path="/createpost" component={requireAuth(CreatePostContainer)}/>
-				<Route path="/edit" component={requireAuth(EditPostContainer)}/>
 				<Route path="/posts/:id" component={SingleBlogPostContainer}/>
+				<Route path="/edit/:id" component={requireAuth(EditPostContainer)}/>
 			</switch>
 		</Router>
 	</Provider>
