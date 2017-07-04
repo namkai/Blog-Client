@@ -16,7 +16,7 @@ const BlogPosts = ({ posts, selectPost, deletePost, addComment, user, query, upd
 	}
 	return (
 		<BlogPostLayout card={<ProfileCard {...user} />}>
-			<SearchBar query={query} updateQuery={updateQuery}/>
+			<SearchBar query={query} updateQuery={updateQuery} />
 			{ list }
 		</BlogPostLayout>
 	);

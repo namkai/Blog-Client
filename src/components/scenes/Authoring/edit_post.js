@@ -4,8 +4,7 @@ import { Field } from 'redux-form';
 import { history } from '../../../index';
 import renderInput from '../../common/renderInput';
 
-const EditPost = ({ post: { author }, updateEntity, handleSubmit }) => {
-	console.log(author,`i'm the author!` )
+const EditPost = ({ post: { author, _id }, updateEntity, handleSubmit }) => {
 	const editExistingPost = (post) => {
 		const newPost = {
 			...post,
@@ -53,7 +52,7 @@ const EditPost = ({ post: { author }, updateEntity, handleSubmit }) => {
 						component={renderInput}
 					/>
 				</fieldset>
-				<button className="btn btn-secondary"><Link to="/">Go Back</Link></button>
+				<Link className="btn btn-secondary" to={`/posts/${_id}`}>Go Back</Link>
 				<span>   </span>
 				<button action="submit" className="btn btn-primary">Submit Post!</button>
 			</form>

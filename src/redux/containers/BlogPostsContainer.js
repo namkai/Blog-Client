@@ -20,7 +20,7 @@ const connectToStore = connect(mapStateToProps, { ...actions, getUserData, updat
 const onDidMount = lifecycle({
 	componentDidMount() {
 		if (Object.keys(this.props.posts).length === 0) {
-			this.props.findEntities();
+			this.props.findEntities('posts');
 		}
 		if (Object.keys(this.props.user).length === 0) {
 			const token = localStorage.getItem('token');

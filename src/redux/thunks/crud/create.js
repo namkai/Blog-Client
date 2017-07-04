@@ -9,10 +9,6 @@ import * as schema from '../../normalizr/entities';
 export const createEntity = post => dispatch =>
 	axios
 		.post(`${api.ROOT}/posts`, post)
-		.then((response) => {
-			const normalizedData = normalize(response.data, schema.post);
-			dispatch({ type: type.CREATE_POSTS_COMPLETED, payload: normalizedData.entities.posts });
-			dispatch({ type: type.CREATE_RESULTS_COMPLETED, payload: normalizedData.result });
-		})
+		.then(response => dispatch({ type: type.CREATE_POSTS_COMPLETED, payload: response.data }))
 		.catch(error => console.log(error, 'i\'m the error'));
 

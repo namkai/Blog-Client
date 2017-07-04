@@ -11,26 +11,26 @@ export default function createEntityReducer(entityName = '') {
 		case `FIND_${entityConstant}_STARTED`:
 			return { ...state, [entityName]: payload };
 		case `FIND_${entityConstant}_COMPLETED`:
-			console.log(payload, 'payload');
 			normalizedData = normalize(payload, schema[`array_of_${entityName}`]);
-			console.log(normalizedData, 'normalizedData');
-			return { ..._.merge(state, normalizedData.entities), ..._.merge(state.result, normalizedData.result) };
+			return { ..._.merge(state, normalizedData.entities), result: _.merge(state.result, normalizedData.result) };
 		case `FIND_${entityConstant}_FAILED`:
 			return { ...state, ...payload };
 			// FETCH ONE   FETCH_USER_*
 		case `FETCH_${entityConstant}_STARTED`:
 			return { ...state, [entityName]: payload };
-			case `FETCH_${entityConstant}_COMPLETED`:
-				console.log(`i'm the payload!`, payload)
+		case `FETCH_${entityConstant}_COMPLETED`:
 			normalizedData = normalize(payload, schema.post);
-			return { ..._.merge(state, normalizedData.entities), ..._.merge(state.result, normalizedData.result)};
+			return { ..._.merge(state, normalizedData.entities) };
 		case `FETCH_${entityConstant}_FAILED`:
 			return { ...state, [entityName]: payload };
 			// CREATE ONE  CREATE_USER_*
 		case `CREATE_${entityConstant}_STARTED`:
 			return { ...state, [entityName]: payload };
 		case `CREATE_${entityConstant}_COMPLETED`:
-			return { ...state, [entityName]: { ...state[entityName], ...payload } };
+			console.log(`i'm the payload!`, payload)
+			normalizedData = normalize(payload, schema.post);
+			console.log(normalizedData, `i'm the normalized DATA`)
+			return { ..._.merge(state, normalizedData.entities), result: [...state.result, normalizedData.result] };
 		case `CREATE_${entityConstant}_FAILED`:
 			return { ...state, [entityName]: payload };
 			// UPDATE ONE  UPDATE_USER_*
