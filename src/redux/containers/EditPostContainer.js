@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { compose, lifecycle } from 'recompose';
 import { reduxForm } from 'redux-form';
-import EditPost from '../../components/scenes/Authoring/edit_post';
+import EditPost from '../../components/scenes/authoring/edit_post';
 import { updateEntity } from '../thunks/crud/update';
 import { history } from '../../index';
 import * as actions from '../actions/post_actions';

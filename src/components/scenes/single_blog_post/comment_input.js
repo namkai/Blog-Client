@@ -3,7 +3,7 @@ import { Field, reduxForm } from 'redux-form';
 import renderInput from '../../common/renderInput';
 
 
-const CommentInput = ({ handleSubmit, user, addComment, postId }) => {
+const CommentInput = ({ handleSubmit, user, createComment, postId }) => {
 	console.log(user, `i'm the user`)
 	const onSubmit = (comment) => {
 		const newComment = {
@@ -17,12 +17,11 @@ const CommentInput = ({ handleSubmit, user, addComment, postId }) => {
 				text: comment.comment,
 			},
 		};
-		addComment(newComment);
+		createComment(newComment);
 	};
 	return (
 		<form onSubmit={handleSubmit(comment => onSubmit(comment))}>
 			<fieldset className="form-group">
-				{/*<label htmlFor="">Add a comment:</label>*/}
 				<Field
 					name="comment"
 					type="text"
@@ -31,7 +30,6 @@ const CommentInput = ({ handleSubmit, user, addComment, postId }) => {
 			</fieldset>
 			<button>Add Comment</button>
 		</form>
-
 	);
 };
 

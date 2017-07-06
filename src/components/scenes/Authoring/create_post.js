@@ -7,7 +7,7 @@ import manageUser from '../../../redux/containers/hoc/manage_user';
 import requireAuth from '../../../redux/containers/hoc/require_authentication';
 import renderInput from '../../common/renderInput';
 
-const CreatePost = ({ handleSubmit, createEntity, user: { _id, name, profilePhoto } }) => {
+export const CreatePost = ({ handleSubmit, createEntity, user: { _id, name, profilePhoto } }) => {
 	const createNewPost = (post) => {
 		const newPost = {
 			...post,

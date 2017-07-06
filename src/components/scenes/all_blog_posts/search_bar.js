@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 
 export const SearchBar = ({ query, updateQuery }) =>
@@ -12,5 +13,15 @@ export const SearchBar = ({ query, updateQuery }) =>
 			/>
 		</div>
 	</li>;
+
+SearchBar.defaultProps = {
+	query: '',
+	updateQuery: PropTypes.func,
+};
+
+SearchBar.propTypes = {
+	query: PropTypes.string,
+	updateQuery: PropTypes.func,
+};
 
 export default SearchBar;

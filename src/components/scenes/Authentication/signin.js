@@ -1,11 +1,11 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import { connect } from 'react-redux';
 import { Field, reduxForm } from 'redux-form';
 import * as actions from '../../../redux/actions/authentication_actions';
 import renderInput from '../../common/renderInput';
-import logo from '../../../style/v4/docs/assets/img/brand.png';
 
-const Signin = ({ handleSubmit, signinUser, auth: { error } }) => {
+export const Signin = ({ handleSubmit, signinUser, auth: { error } }) => {
 	const renderAlert = () => {
 		if (error) {
 			return (
@@ -14,14 +14,11 @@ const Signin = ({ handleSubmit, signinUser, auth: { error } }) => {
 				</div>
 			);
 		}
+		return null;
 	};
-
 	return (
 		<div className="container-fluid container-fill-height">
 			<div className="container-content-middle">
-				{/*<a href="../index.html" className="app-brand mb-5">*/}
-					{/*<img src={ logo } alt="brand" style={ { height: 30, marginBottom: 20 } }/>*/}
-				{/*</a>*/}
 				<form className="mx-auto text-center app-login-form" onSubmit={handleSubmit(user => signinUser(user))}>
 					<fieldset className="form-group">
 						<label htmlFor="">Email:</label>
@@ -51,6 +48,16 @@ const Signin = ({ handleSubmit, signinUser, auth: { error } }) => {
 			</div>
 		</div>
 	);
+};
+
+Signin.defaultProps = {
+	error: '',
+	handleSubmit: PropTypes.func,
+	signinUser: PropTypes.func,
+};
+Signin.propTypes = {
+	handleSubmit: PropTypes.func,
+	signinUser: PropTypes.func,
 };
 
 export default connect(({ auth }) => ({ auth }), actions)(reduxForm({ form: 'signin' })(Signin));

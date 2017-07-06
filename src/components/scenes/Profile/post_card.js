@@ -1,10 +1,5 @@
-
 import React from 'react';
 
-const PostCard = (props) => {
-  return (
-    <div>test</div>
-  );
-};
+export const PostCard = props => <div>test</div>;
 
 export default PostCard;

@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  className="profile-header text-center"
+  style={
+    Object {
+      "backgroundImage": "url(undefined)",
+    }
+  }
+>
+  <div
+    className="container-fluid"
+  >
+    <div
+      className="container-inner"
+    >
+      <img
+        className="rounded-circle media-object"
+      />
+      <h3
+        className="profile-header-user"
+      />
+      <p
+        className="profile-header-bio"
+      >
+        Check out my blog posts
+      </p>
+    </div>
+  </div>
+  <nav
+    className="profile-header-nav"
+  >
+    <ul
+      className="nav nav-tabs justify-content-center"
+    >
+      <li
+        className="nav-item active"
+      >
+        <Link
+          className="nav-link"
+          replace={false}
+          to="/profile/posts"
+        >
+          Blog Posts
+        </Link>
+      </li>
+    </ul>
+  </nav>
+</div>
+`;

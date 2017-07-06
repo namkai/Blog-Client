@@ -1,10 +1,11 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Field, reduxForm } from 'redux-form';
 import * as actions from '../../../redux/actions/authentication_actions';
 import renderInput from '../../common/renderInput';
 
-const Signup = ({ handleSubmit, signupUser, auth: { error } }) => {
+export const Signup = ({ handleSubmit, signupUser, auth: { error } }) => {
 	const renderAlert = () => {
 		if (error) {
 			return (
@@ -68,6 +69,18 @@ const Signup = ({ handleSubmit, signupUser, auth: { error } }) => {
 			<button action="submit" className="btn btn-primary">Sign up!</button>
 		</form>
 	);
+};
+
+Signup.defaultProps = {
+	error: '',
+	auth: {},
+	handleSubmit: PropTypes.func,
+	signupUser: PropTypes.func,
+};
+Signup.propTypes = {
+	auth: PropTypes.object,
+	handleSubmit: PropTypes.func,
+	signupUser: PropTypes.func,
 };
 
 const validate = (values) => {

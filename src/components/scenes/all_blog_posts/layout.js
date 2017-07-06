@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
 
-class BlogPostLayout extends PureComponent {
+export class BlogPostLayout extends PureComponent {
 	render() {
 		return (
 			<div className="container pt-4">
@@ -18,5 +19,13 @@ class BlogPostLayout extends PureComponent {
 		);
 	}
 }
+
+BlogPostLayout.defaultProps = {
+	children: [],
+};
+
+BlogPostLayout.propTypes = {
+	children: PropTypes.array,
+};
 
 export default BlogPostLayout;

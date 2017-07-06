@@ -2,11 +2,12 @@ import React from 'react';
 import Comment from './comment';
 import CommentInput from './comment_input';
 
-const BlogPostBody = ({ title, body, image, author, comments, _id, addComment, user, date }) => {
+const BlogPostBody = ({ title, body, image, author, comments, _id, createComment, user, date }) => {
 	let commentList = null;
 	if(comments !== undefined) {
 		commentList = comments.map(comment => <Comment {...comment} />);
 	}
+	console.log(`i'm the comments!`, comments)
 	return (
 		<li className="media list-group-item p-4">
 			<img
@@ -24,7 +25,7 @@ const BlogPostBody = ({ title, body, image, author, comments, _id, addComment, u
 					</p>
 					<ul className="media-list">
 						{commentList}
-						<CommentInput postId={_id} addComment={addComment} user={user} />
+						<CommentInput postId={_id} createComment={createComment} user={user} />
 					</ul>
 				</div>
 			</div>

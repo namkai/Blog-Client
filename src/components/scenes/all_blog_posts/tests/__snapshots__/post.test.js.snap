@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<li
+  className="media list-group-item p-4 post"
+  onClick={[Function]}
+>
+  <img
+    className="media-object d-flex align-self-start mr-3"
+    src="http://www.bolton-associates.co.uk/wp-content/uploads/2015/10/analytics-programming.png"
+  />
+  <div
+    className="media-body"
+  >
+    <div
+      className="media-body-text"
+      style={
+        Object {
+          "width": "100%",
+        }
+      }
+    >
+      <div
+        className="media-heading"
+      >
+        <small
+          className="float-right text-muted"
+        />
+        <Link
+          onClick={[Function]}
+          replace={false}
+          to="posts/function () { [native code] }"
+        >
+          <h6 />
+        </Link>
+      </div>
+      <p>
+        This is the description
+      </p>
+    </div>
+  </div>
+</li>
+`;

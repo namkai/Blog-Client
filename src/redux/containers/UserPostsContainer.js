@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 import * as actions from '../actions/post_actions';
 import getFilteredUsersPosts from '../selectors/selected_users_posts';
-import UserPosts from '../../components/scenes/Profile/user_posts';
+import UserPosts from '../../components/scenes/profile/user_posts';
 
 const mapStateToProps = state => ({
 	posts: getFilteredUsersPosts(state),

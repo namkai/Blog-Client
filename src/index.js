@@ -2,25 +2,23 @@ import { createBrowserHistory } from 'history';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import { Route, Router, Switch } from 'react-router-dom';
-import './style/v4/dist/toolkit.css';
-import './style/v4/docs/assets/css/application.css';
+import { Route, Router } from 'react-router-dom';
 import App from './components/app';
-import Signin from './components/scenes/Authentication/signin';
-import Signout from './components/scenes/Authentication/signout';
-import Signup from './components/scenes/Authentication/signup';
-import CreatePost from './components/scenes/Authoring/create_post';
-import EditPost from './components/scenes/Authoring/edit_post';
-import requireAuth from './redux/containers/hoc/require_authentication';
-import BlogPostsContainer from './redux/containers/BlogPostsContainer';
-import ProfileContainer from './redux/containers/ProfileContainer';
-import UserPostsContainer from './redux/containers/UserPostsContainer';
-import EditPostContainer from './redux/containers/EditPostContainer';
-import CreatePostContainer from './redux/containers/CreatePostContainer';
-import SingleBlogPostContainer from './redux/containers/SingleBlogPostContainer';
+import Signin from './components/scenes/authentication/signin';
+import Signout from './components/scenes/authentication/signout';
+import Signup from './components/scenes/authentication/signup';
 import * as type from './redux/constants/actionTypes';
+import BlogPostsContainer from './redux/containers/BlogPostsContainer';
+import CreatePostContainer from './redux/containers/CreatePostContainer';
+import EditPostContainer from './redux/containers/EditPostContainer';
+import requireAuth from './redux/containers/hoc/require_authentication';
+import ProfileContainer from './redux/containers/ProfileContainer';
+import SingleBlogPostContainer from './redux/containers/SingleBlogPostContainer';
+import UserPostsContainer from './redux/containers/UserPostsContainer';
 import configureStore from './redux/store';
 import './style/index.css';
+import './style/v4/dist/toolkit.css';
+import './style/v4/docs/assets/css/application.css';
 
 export const history = createBrowserHistory();
 const store = configureStore();
@@ -48,5 +46,4 @@ ReactDOM.render(
 				<Route path="/edit/:id" component={requireAuth(EditPostContainer)}/>
 			</switch>
 		</Router>
-	</Provider>
-	, document.getElementById('root'));
+	</Provider>, document.getElementById('root'));

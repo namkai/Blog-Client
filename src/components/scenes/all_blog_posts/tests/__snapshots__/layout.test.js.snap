@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Renders child components 1`] = `
+<div
+  className="container pt-4"
+>
+  <div
+    className="row"
+  >
+    <div
+      className="col-lg-2"
+    />
+    <div
+      className="col-lg-8"
+    >
+      <ul
+        className="list-group media-list media-list-stream mb-4"
+      />
+    </div>
+  </div>
+</div>
+`;
