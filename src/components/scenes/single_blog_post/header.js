@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import manageUser from '../../../redux/containers/hoc/manage_user';
 import '../../../style/Postheader.css';
 
-const PostHeader = ({ _id, author, deletePost, user }) => {
+export const PostHeader = ({ _id, author, deletePost, user }) => {
 	const currentUser = () => {
 		if ( author !== undefined && author.id === user._id) {
 			return (

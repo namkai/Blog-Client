@@ -1,3 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders correctly 1`] = `<Component />`;
+exports[`renders correctly 1`] = `
+<Component
+  backgroundPhoto={[Function]}
+  name={[Function]}
+  profilePhoto={[Function]}
+/>
+`;

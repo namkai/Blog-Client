@@ -1,13 +1,14 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Comment from './comment';
 import CommentInput from './comment_input';
 
-const BlogPostBody = ({ title, body, image, author, comments, _id, createComment, user, date }) => {
+const BlogPostBody = ({ title, body, image, comments, _id, createComment, user, date }) => {
 	let commentList = null;
-	if(comments !== undefined) {
+	if (comments.length > 0) {
 		commentList = comments.map(comment => <Comment {...comment} />);
 	}
-	console.log(`i'm the comments!`, comments)
+	console.log(`i'm the comments!`, comments);
 	return (
 		<li className="media list-group-item p-4">
 			<img
@@ -25,7 +26,7 @@ const BlogPostBody = ({ title, body, image, author, comments, _id, createComment
 					</p>
 					<ul className="media-list">
 						{commentList}
-						<CommentInput postId={_id} createComment={createComment} user={user} />
+						<CommentInput postId={_id} createComment={createComment} user={user}/>
 					</ul>
 				</div>
 			</div>
@@ -33,5 +34,26 @@ const BlogPostBody = ({ title, body, image, author, comments, _id, createComment
 	);
 };
 
+BlogPostBody.defaultProps = {
+	title: '',
+	body: '',
+	image: '',
+	comments: [],
+	_id: '',
+	user: {},
+	date: '',
+	createComment: PropTypes.func,
+};
+
+BlogPostBody.propTypes = {
+	title: PropTypes.string,
+	body: PropTypes.string,
+	image: PropTypes.string,
+	comments: PropTypes.arrayOf(PropTypes.object),
+	_id: PropTypes.string,
+	user: PropTypes.object,
+	date: PropTypes.string,
+	createComment: PropTypes.func,
+};
 
 export default BlogPostBody;

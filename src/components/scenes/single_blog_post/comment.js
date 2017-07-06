@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Comment = (props) => {
+export const Comment = (props) => {
 	return (
 		<li className="media" style={{marginBottom: '10px'}}>
 			<img className="media-object mr-3 align-self-start" src={props.author.profilePhoto} />

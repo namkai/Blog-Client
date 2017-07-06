@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import '../../../style/profile.css';
@@ -21,5 +22,19 @@ export const ProfileLayout = ({ name, backgroundPhoto, profilePhoto, children })
 		{children}
 	</div>
 );
+
+ProfileLayout.defaultProps = {
+	name: '',
+	backgroundPhoto: '',
+	profilePhoto: '',
+	children: [],
+};
+
+ProfileLayout.defaultProps = {
+	name: PropTypes.string,
+	backgroundPhoto: PropTypes.string,
+	profilePhoto: PropTypes.string,
+	children: PropTypes.array,
+};
 
 export default ProfileLayout;
