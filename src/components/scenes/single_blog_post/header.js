@@ -4,12 +4,12 @@ import manageUser from '../../../redux/containers/hoc/manage_user';
 import '../../../style/Postheader.css';
 
 export const PostHeader = ({ _id, author, deletePost, user }) => {
-	const currentUser = () => {
+	const checkCurrentUser = () => {
 		if ( author !== undefined && author.id === user._id) {
 			return (
 				<div className="edit">
 					<Link to={`/edit/${_id}`}>Edit</Link>
-					<a href="#" onClick={() => deletePost(_id)}>Delete</a>
+					<Link to="/" onClick={() => deletePost(_id)}>Delete</Link>
 				</div>
 			);
 		}
@@ -21,7 +21,7 @@ export const PostHeader = ({ _id, author, deletePost, user }) => {
 		<li className="media list-group-item p-4">
 			<div className="media-body">
 				<Link to="/">Back</Link>
-				{currentUser()}
+				{checkCurrentUser()}
 			</div>
 		</li>
 	);
